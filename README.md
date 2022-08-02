@@ -24,11 +24,8 @@ If you will be using the automation scripts to perform any configurations and in
 **Homebrew**
   - https://brew.sh
   - follow the instructions on their site  
-    ___
-    ### Note: 
-    > **Note**:
-    Don't forget to look for and follow the '**Next Steps**' in your terminal after brew is installed
-    ___
+    > **Note**:  
+    > Don't forget to look for and follow the '**Next Steps**' in your terminal after brew is installed
 
 # Use Cases
 
