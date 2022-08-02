@@ -133,14 +133,14 @@ These configurations and installs are my preferences regardless of what the devi
       $ git config --global user.name "FIRST_NAME LAST_NAME"
       $ git config --global user.email "MY_NAME@users.noreply.github.com"
       ```
-      <div style="border:1px solid lightblue;background:rgba(0,127,255,0.2);border-radius:1em;padding:0.75em 1em;margin-bottom:1em;">  
-      <b>Note:</b> In order for gpg signing to work, the configured git username and email must match those set on your gpg key.
-      </div>
-      <div style="border:1px solid yellow;background:rgba(255,255,0,0.2);border-radius:1em;padding:0.75em 1em;margin-bottom:1em;">  
-      <b>Tip:</b> The email you commit with will be visible to people on the internet. For privacy configure something anonymous. <br/><br/>
-      Github has a solution to help.<br/>
-      See <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/blocking-command-line-pushes-that-expose-your-personal-email-address">Setting your commit email address</a> on Github.
-      </div>
+> **Note**:  
+> In order for gpg signing to work, the configured git username and email must match those set on your gpg key.
+
+> **Warning**:
+> The email you commit with will be visible to people on the internet. For privacy configure something anonymous.
+> 
+> Github has a solution to help.  
+> See [Setting your commit email address](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/blocking-command-line-pushes-that-expose-your-personal-email-address) on Github.
 
   - SSH key
       - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
@@ -163,9 +163,9 @@ These configurations and installs are my preferences regardless of what the devi
           $ git commit -S -m "your commit message"
           # Creates a signed commit
           ```
-          <div style="border:1px solid yellow;background:rgba(255,255,0,0.2);border-radius:1em;padding:0.75em 1em;margin-bottom:1em;">  
-          <b>Tip:</b> To configure your Git client to sign commits by default for a local repository, in Git versions 2.0.0 and above, run <span style="display:inline-block;background:rgba(127,127,127,0.25);border-radius:.25em;padding:0 .25em">git config commit.gpgsign true</span>.
-          </div>
+          > 💡 **Tip**:  
+          > To configure your Git client to sign commits by default for a local repository, in Git versions 2.0.0 and above, run `git config commit.gpgsign true`.
+
   - Command Line Developer Tools
       - Just run a git command, it will auto prompt to install
       ```bash
