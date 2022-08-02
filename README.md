@@ -24,8 +24,8 @@ If you will be using the automation scripts to perform any configurations and in
 **Homebrew**
   - https://brew.sh
   - follow the instructions on their site  
-    > **Note**:  
-    > Don't forget to look for and follow the '**Next Steps**' in your terminal after brew is installed
+> **Note**:  
+> Don't forget to look for and follow the '**Next Steps**' in your terminal after brew is installed
 
 # Use Cases
 
@@ -49,13 +49,12 @@ These configurations and installs are my preferences regardless of what the devi
     - Finder
     - Settings
     - Downloads
-    - Trash
-      <div style="border:1px solid lightblue;background:rgba(0,127,255,0.2);border-radius:1em;padding:0.75em 1em;margin-bottom:1em;">  
-      <b>Note:</b> Subsequent use-case specific configs will fill the dock with other apps
-      </div>
-      <div style="border:1px solid yellow;background:rgba(255,255,0,0.2);border-radius:1em;padding:0.75em 1em;margin-bottom:1em;">  
-      <b>Tip:</b> If you want fast access to apps that aren’t in your dock you can either 4 finger pinch (on a trackpad) to open launchpad or you can use my favorite, <b>⌘ Space</b>, to launch spotlight search
-      </div>
+    - Trash  
+    > **Note**:  
+    > Subsequent use-case specific configs will fill the dock with other apps
+
+    > 💡 **Tip**:  
+    > If you want fast access to apps that aren’t in your dock you can either 4 finger pinch (on a trackpad) to open launchpad or you can use my favorite, **⌘ Space**, to launch spotlight search
 
 **Touchpad**
   - Tap to click: on
