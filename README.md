@@ -23,10 +23,12 @@ If you will be using the automation scripts to perform any configurations and in
 
 **Homebrew**
   - https://brew.sh
-  - follow the instructions on their site
-      <div style="border:1px solid lightblue;background:rgba(0,127,255,0.2);border-radius:1em;padding:0.75em 1em;margin-bottom:1em;">  
-      <b>Note:</b> Don't forget to look for and follow the '<b>Next Steps</b>' in your terminal after brew is installed
-      </div>
+  - follow the instructions on their site  
+    ___
+    ### Note: 
+    > **Note**:
+    Don't forget to look for and follow the '**Next Steps**' in your terminal after brew is installed
+    ___
 
 # Use Cases
 
@@ -118,7 +120,7 @@ These configurations and installs are my preferences regardless of what the devi
   - Show hidden files
       ```bash
       # In Terminal
-      defaults write com.apple.Finder AppleShowAllFiles true
+      $ defaults write com.apple.Finder AppleShowAllFiles true
       ```
 
 ## Developer
@@ -132,8 +134,8 @@ These configurations and installs are my preferences regardless of what the devi
 **git**
   - Config your user name and email
       ```bash
-      git config --global user.name "FIRST_NAME LAST_NAME"
-      git config --global user.email "MY_NAME@users.noreply.github.com"
+      $ git config --global user.name "FIRST_NAME LAST_NAME"
+      $ git config --global user.email "MY_NAME@users.noreply.github.com"
       ```
       <div style="border:1px solid lightblue;background:rgba(0,127,255,0.2);border-radius:1em;padding:0.75em 1em;margin-bottom:1em;">  
       <b>Note:</b> In order for gpg signing to work, the configured git username and email must match those set on your gpg key.
@@ -148,8 +150,14 @@ These configurations and installs are my preferences regardless of what the devi
       - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
   - GPG key
       ```bash
-      brew install gnupg
+      $ brew install gnupg
       ```
+    - On an `Apple Silicon` machine you need another step for passphrase protected GPG signing
+    ```bash
+    $ brew install pinentry-mac
+    $ echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
+    $ killall gpg-agent
+    ```
     - follow the instructions on your git repo of choice for setting up GPG keys and signing commits
     - Github
       - Generate GPG Key https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
@@ -166,7 +174,7 @@ These configurations and installs are my preferences regardless of what the devi
       - Just run a git command, it will auto prompt to install
       ```bash
       # Clone this repo for instance
-      git clone https://github.com/gnomical/config-my-mac.git
+      $ git clone https://github.com/gnomical/config-my-mac.git
       ```
 
 ### Software <!-- omit in toc -->
