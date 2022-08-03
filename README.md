@@ -10,7 +10,6 @@ Documentation and scripts for quickly configuring a new Mac for various personal
   - [Web Developer ⎘](#web-developer-)
   - [System Admin ⎘](#system-admin-)
 
-# <!-- omit in toc -->
 ## Introduction
 
 You might be thinking, “This isn’t my first rodeo. Why do I need scripted configs if I’ve been using computers for 20+ years and can just restore from my last backup?”. Being a paranoid skeptic myself, I never trust backups. For one, data corruption is real. Secondly, after a year or two of transient software installs and updates, it’s hard to guarantee things are situated quite the way the developers intended. Lastly, viruses and malware could be sitting dormant anywhere within that backup. As a result of this paranoia, I start each new machine from scratch and reach into my backups sparingly as I progress through whatever workflow was lacking some key piece of data. Often updating my modular repos to include that data for future scripted success.
@@ -29,26 +28,26 @@ What you will find below a list of use cases each including a verbose descriptio
 
 ## Use Cases
 
-### General (All Use Cases) [⎘](general/README.md)
+### General (All Use Cases) [⎘](general)
 
 These are my preferences regardless of what the device will be used for. At the OS level they lay the foundation for ease of use in the topics of eye strain, screen real estate, and touch accessibility. At the application level they set you up for validating machine performance, establishing communication capabilities and security best practices.
 
-[See More →](general/README.md)
+[See More →](general)
 
-### Developer [⎘](developer/README.md)
+### Developer [⎘](developer)
 
 No matter what kind of software you develop there are several rules that hold true. This section is meant to be a foundation for the more specific developer use cases to build off of. It sets you up with some basic file organization, advanced git configuration, and a widely accepted IDE.
 
-[See More →](developer/README.md)
+[See More →](developer)
 
-### Web Developer [⎘](web-developer/README.md)
+### Web Developer [⎘](web-developer)
 
 When it comes to developing for the web, one of the main benefits is ease of cross platform delivery. That makes specific configs for this profession rare. What you will need however is a great suite of browsers to test with and tools for both rapid prototyping and polished finish.
 
-[See More →](web-developer/README.md)
+[See More →](web-developer)
 
-### System Admin [⎘](system-admin/README.md)
+### System Admin [⎘](system-admin)
 
 Whether you are responsible for machines you deploy to, tinker elaborately on your own machine, or find yourself architecting all the things - you will want greater visibility than most and tools to assist you on your journey. From terminal enhancements and command line tools to OS modifications and helper apps - this section has you covered.
 
-[See More →](system-admin/README.md)
+[See More →](system-admin)
