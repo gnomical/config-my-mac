@@ -1,23 +1,23 @@
-# config-my-mac <!-- omit in toc -->
+# config-my-mac / ***2022*** <!-- omit in toc -->
 Documentation and scripts for quickly configuring a new Mac for various personal and professional use cases.
 
-**Table of Contents**
+### Table of Contents <!-- omit in toc -->
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Use Cases](#use-cases)
   - [General (All Use Cases) ⎘](#general-all-use-cases-)
-  - [System Admin](#system-admin)
-  - [Developer](#developer)
-  - [Web Developer](#web-developer)
+  - [Developer ⎘](#developer-)
+  - [Web Developer ⎘](#web-developer-)
+  - [System Admin ⎘](#system-admin-)
 
-#
-# Introduction
+# <!-- omit in toc -->
+## Introduction
 
 You might be thinking, “This isn’t my first rodeo. Why do I need scripted configs if I’ve been using computers for 20+ years and can just restore from my last backup?”. Being a paranoid skeptic myself, I never trust backups. For one, data corruption is real. Secondly, after a year or two of transient software installs and updates, it’s hard to guarantee things are situated quite the way the developers intended. Lastly, viruses and malware could be sitting dormant anywhere within that backup. As a result of this paranoia, I start each new machine from scratch and reach into my backups sparingly as I progress through whatever workflow was lacking some key piece of data. Often updating my modular repos to include that data for future scripted success.
 
 What you will find below a list of use cases each including a verbose description of configurations and applications grouped by professional vertical. I myself am an IT professional with most of my experience in web application development. However I have also included verticals that pertain to some of my hobbies, like writing and design. It is my intention that these verticals will be augmented by other professionals over time and that this repository can be used as a de facto configuration utility across many environments and professions so as to share tooling knowledge and simplify workflow documentation by creating more workflow commonality amongst our peers.  Some of the categories are intended to stack, for instance system admin -> developer, and will be documented as such. Without further ado, let’s dig into the configurations.
 
-# Prerequisites
+## Prerequisites
 
 **If** you will be using the automation scripts to perform any configurations and installs you will need to install the following, first.
 
@@ -27,102 +27,28 @@ What you will find below a list of use cases each including a verbose descriptio
 > **Note**:  
 > Don't forget to look for and follow the '**Next Steps**' in your terminal after brew is installed
 
-# Use Cases
+## Use Cases
 
-## General (All Use Cases) [⎘](general/README.md)
+### General (All Use Cases) [⎘](general/README.md)
 
-These configurations and installs are my preferences regardless of what the device will be used for. At the OS level they lay the foundation for ease of use in the topics of eye strain, screen real estate, and touch accessibility. At the application level they set you up for validating machine performance, establishing communication capabilities and security best practices.
+These are my preferences regardless of what the device will be used for. At the OS level they lay the foundation for ease of use in the topics of eye strain, screen real estate, and touch accessibility. At the application level they set you up for validating machine performance, establishing communication capabilities and security best practices.
 
 [See More →](general/README.md)
 
-## System Admin
+### Developer [⎘](developer/README.md)
 
-### OS <!-- omit in toc -->
-**Finder**
-  - Preferences > Advanced > Show all filename extensions
-  - View > Show Path Bar
-  - View > Show Status Bar
-  - Show hidden files
-      ```bash
-      # In Terminal
-      $ defaults write com.apple.Finder AppleShowAllFiles true
-      ```
+No matter what kind of software you develop there are several rules that hold true. This section is meant to be a foundation for the more specific developer use cases to build off of. It sets you up with some basic file organization, advanced git configuration, and a widely accepted IDE.
 
-## Developer
+[See More →](developer/README.md)
 
-### OS <!-- omit in toc -->
-**Organization**
-  - Create a Code folder in your home directory: `mkdir ~/Code`
-  - All of your projects should be placed here. If a particular language, such as go, is picky about folder structure - use this as its root and then create the structure as needed e.g. `~/Code/go/src/example.com`
+### Web Developer [⎘](web-developer/README.md)
 
+When it comes to developing for the web, one of the main benefits is ease of cross platform delivery. That makes specific configs for this profession rare. What you will need however is a great suite of browsers to test with and tools for both rapid prototyping and polished finish.
 
-**git**
-  - Config your user name and email
-      ```bash
-      $ git config --global user.name "FIRST_NAME LAST_NAME"
-      $ git config --global user.email "MY_NAME@users.noreply.github.com"
-      ```
-    > **Note**:  
-    > In order for gpg signing to work, the configured git username and email must match those set on your gpg key.
+[See More →](web-developer/README.md)
 
-    > **Warning**:
-    > The email you commit with will be visible to people on the internet. For privacy configure something anonymous.
-    > 
-    > Github has a solution to help.  
-    > See [Setting your commit email address](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/blocking-command-line-pushes-that-expose-your-personal-email-address) on Github.
+### System Admin [⎘](system-admin/README.md)
 
-  - SSH key
-      - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-  - GPG key
-      ```bash
-      $ brew install gnupg
-      ```
-    - On an `Apple Silicon` machine you need another step for passphrase protected GPG signing
-    ```bash
-    $ brew install pinentry-mac
-    $ echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
-    $ killall gpg-agent
-    ```
-    - follow the instructions on your git repo of choice for setting up GPG keys and signing commits
-    - Github
-      - Generate GPG Key https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
-      - Sign Commits https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
-      - When committing changes in your local branch, add the -S flag to the git commit command:
-          ```bash
-          $ git commit -S -m "your commit message"
-          # Creates a signed commit
-          ```
-          > 💡 **Tip**:  
-          > To configure your Git client to sign commits by default for a local repository, in Git versions 2.0.0 and above, run `git config commit.gpgsign true`.
+Whether you are responsible for machines you deploy to, tinker elaborately on your own machine, or find yourself architecting all the things - you will want greater visibility than most and tools to assist you on your journey. From terminal enhancements and command line tools to OS modifications and helper apps - this section has you covered.
 
-  - Command Line Developer Tools
-      - Just run a git command, it will auto prompt to install
-      ```bash
-      # Clone this repo for instance
-      $ git clone https://github.com/gnomical/config-my-mac.git
-      ```
-
-### Software <!-- omit in toc -->
-**Visual Studio Code** (add to dock)
-  - The most widely adopted IDE as of this writing (2022)
-  - Huge library of community plugins
-  - Configure with high contrast dark theme
-      - Preferences > Color Theme (⌘K ⌘T) 
-      - then select `Dark High Contrast`
-  - Command Line Interface
-      - Launch VS Code
-      - Open the Command Palette (⇧⌘P) and type 'shell command' to find the `Shell Command: Install 'code' command in PATH` command.
-      - https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line
-
-## Web Developer
-
-### Software <!-- omit in toc -->
-**Browsers**
-  - Install Latest
-      - Safari
-      - Chrome
-      - Edge
-      - Firefox
-  - Create “Browsers” folder in `~/Applications`
-      - Create symlinks to each browser within new folder
-      - Place browser folder above downloads folder in dock
+[See More →](system-admin/README.md)
