@@ -37,16 +37,14 @@ and set the following:
   - [x] Automatically hide and show the dock
 - uncheck
   - [ ] Show recent applications in Dock
-- Remove all icons from dock except:
-  - Finder
-  - Settings
-  - Downloads
-  - Trash  
-  > **Note**:  
-  > Subsequent use-case specific configs will fill the dock with other apps
+- Remove all icons from dock except:  
+  Finder, Settings, Downloads, Trash
 
-  > 💡 **Tip**:  
-  > If you want fast access to apps that aren’t in your dock you can either 4 finger pinch (on a trackpad) to open launchpad or you can use my favorite, **⌘ Space**, to launch spotlight search
+> **Note**:  
+> Subsequent configs may fill the dock with other apps
+
+> 💡 **Tip**:  
+> For fast access to apps sans the dock you can either open launchpad (4 finger pinch on a trackpad) or you can use my favorite, **⌘ Space**, to launch spotlight search.
 
 ## Trackpad
 Pointer options can be very personal, but these are the settings I prefer for productivity.
