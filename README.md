@@ -5,7 +5,7 @@ Documentation and scripts for quickly configuring a new Mac for various personal
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Use Cases](#use-cases)
-  - [General (All Use Cases)](#general-all-use-cases)
+  - [General (All Use Cases) ⎘](#general-all-use-cases-)
   - [System Admin](#system-admin)
   - [Developer](#developer)
   - [Web Developer](#web-developer)
@@ -13,13 +13,13 @@ Documentation and scripts for quickly configuring a new Mac for various personal
 #
 # Introduction
 
-You might be thinking, “This isn’t my first rodeo. Why do I need scripted configs if I’ve been using computers for 20+ years and can just restore from my last backup?” Being a paranoid skeptic myself, I never trust backups. For one, data corruption is real. Secondly, after a year or two of transient software installs and updates, it’s hard to guarantee things are situated quite the way the developers intended. Lastly, viruses and malware could be sitting dormant anywhere within that backup. As a result of this paranoia, I start each new machine from scratch and reach into my backups sparingly as I progress through whatever workflow was lacking some key piece of data. Often updating my modular repos to include that data for future scripted success.
+You might be thinking, “This isn’t my first rodeo. Why do I need scripted configs if I’ve been using computers for 20+ years and can just restore from my last backup?”. Being a paranoid skeptic myself, I never trust backups. For one, data corruption is real. Secondly, after a year or two of transient software installs and updates, it’s hard to guarantee things are situated quite the way the developers intended. Lastly, viruses and malware could be sitting dormant anywhere within that backup. As a result of this paranoia, I start each new machine from scratch and reach into my backups sparingly as I progress through whatever workflow was lacking some key piece of data. Often updating my modular repos to include that data for future scripted success.
 
 What you will find below a list of use cases each including a verbose description of configurations and applications grouped by professional vertical. I myself am an IT professional with most of my experience in web application development. However I have also included verticals that pertain to some of my hobbies, like writing and design. It is my intention that these verticals will be augmented by other professionals over time and that this repository can be used as a de facto configuration utility across many environments and professions so as to share tooling knowledge and simplify workflow documentation by creating more workflow commonality amongst our peers.  Some of the categories are intended to stack, for instance system admin -> developer, and will be documented as such. Without further ado, let’s dig into the configurations.
 
-# Prerequisites 
+# Prerequisites
 
-If you will be using the automation scripts to perform any configurations and installs you will need to install the following, first.
+**If** you will be using the automation scripts to perform any configurations and installs you will need to install the following, first.
 
 **Homebrew**
   - https://brew.sh
@@ -29,82 +29,11 @@ If you will be using the automation scripts to perform any configurations and in
 
 # Use Cases
 
-## General (All Use Cases)
+## General (All Use Cases) [⎘](general/README.md)
 
 These configurations and installs are my preferences regardless of what the device will be used for. At the OS level they lay the foundation for ease of use in the topics of eye strain, screen real estate, and touch accessibility. At the application level they set you up for validating machine performance, establishing communication capabilities and security best practices.
 
-### Operating System <!-- omit in toc -->
-**General**
-  - System Preferences -> General -> Appearance: (Dark)
-
-**Dock**
-  - System Preferences -> Dock & Menu Bar
-    - Size: (about 20%, same size as apple icon in menu bar)
-    - Position on screen: left
-    - check
-      - [x] Automatically hide and show the dock
-    - uncheck
-      - [ ] Show recent applications in Dock
-  - Remove all icons from dock except:
-    - Finder
-    - Settings
-    - Downloads
-    - Trash  
-    > **Note**:  
-    > Subsequent use-case specific configs will fill the dock with other apps
-
-    > 💡 **Tip**:  
-    > If you want fast access to apps that aren’t in your dock you can either 4 finger pinch (on a trackpad) to open launchpad or you can use my favorite, **⌘ Space**, to launch spotlight search
-
-**Touchpad**
-  - Tap to click: on
-  - Click: light
-  - Tracking Speed: 2nd from top
-  - Accessibility > pointer control > Mouse & Trackpad > Trackpad Options > Enable dragging
-
-**Screenshots**
-  - Keep screenshots from cluttering your desktop by creating a folder for them
-  - Press ⇧⌘ 5 then under options > Save To > Other Location
-  - Create a new folder on your desktop called `Screenshots`
-
-### Software <!-- omit in toc -->
-**Geekbench**
-  - make sure you didn’t get a lemon
-  - Does your score match other uploads for your same machine?
-
-**Bitwarden** (add to dock)
-  - Enable the Safari Extension
-      - Safari > Preferences > Extensions > check Bitwarden
-  - Use a unique password for every service
-  - As of 2022
-      - Use 16 characters
-      - Upper and lower
-      - Numbers
-      - Symbols
-      - Enable 2fa on every account that you can and opt for OTP where possible
-
-**Signal** (add to dock)
-  - Secure, End-to-End encrypted messaging
-  - Replace iMessage with this and tell your friends to as well
-
-**Proton Mail** (add to dock)
-  - Secure, End-to-End encrypted mail
-  - Must use Proton Mail Bridge along with your email client of choice (apple mail, outlook, thunderbird)
-
-**Bloat**
-  - Uninstall the following
-      - iMovie
-      - GarageBand
-  - Move the following, that can’t be uninstalled, to a folder within launchpad called `Apple Clutter`
-      - Facetime
-      - Maps
-      - Messages
-      - Music
-      - News
-      - Podcasts
-      - Stocks
-      - TV
-
+[See More →](general/README.md)
 
 ## System Admin
 
@@ -133,14 +62,14 @@ These configurations and installs are my preferences regardless of what the devi
       $ git config --global user.name "FIRST_NAME LAST_NAME"
       $ git config --global user.email "MY_NAME@users.noreply.github.com"
       ```
-> **Note**:  
-> In order for gpg signing to work, the configured git username and email must match those set on your gpg key.
+    > **Note**:  
+    > In order for gpg signing to work, the configured git username and email must match those set on your gpg key.
 
-> **Warning**:
-> The email you commit with will be visible to people on the internet. For privacy configure something anonymous.
-> 
-> Github has a solution to help.  
-> See [Setting your commit email address](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/blocking-command-line-pushes-that-expose-your-personal-email-address) on Github.
+    > **Warning**:
+    > The email you commit with will be visible to people on the internet. For privacy configure something anonymous.
+    > 
+    > Github has a solution to help.  
+    > See [Setting your commit email address](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/blocking-command-line-pushes-that-expose-your-personal-email-address) on Github.
 
   - SSH key
       - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
