@@ -23,14 +23,14 @@ These are my preferences regardless of what the device will be used for. At the 
 ## Appearance
 Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[<sup>1</sup>](https://www.webmd.com/eye-health/prevent-digital-eyestrain) Sleep can be affected by blue light late in the day.[<sup>2</sup>](https://www.health.harvard.edu/staying-healthy/blue-light-has-a-dark-side) I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
 
-Go To: **System Preferences -> General**  
+Go to: **System Preferences -> General**  
 and set the following:
 - Appearance: Dark
 
 ## Dock
 The dock is one of those things that seems to be abused by Apple out of the box. It comes overloaded with bloatware, occupies a good percentage of the screen height, and can quickly become more of a drawback than an asset. These tweaks will keep the Dock out of your way until you need it.
 
-Go To: **System Preferences -> Dock & Menu Bar**  
+Go to: **System Preferences -> Dock & Menu Bar**  
 and set the following:  
 - Size: (about 20%, same size as apple icon in menu bar)
 - Position on screen: left
