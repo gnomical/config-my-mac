@@ -1,4 +1,4 @@
-### [config-my-mac](../) / <!-- omit in toc -->
+### [config-my-mac](../../../) / <!-- omit in toc -->
 ## General (All Use Cases) <!-- omit in toc -->
 
 These are my preferences regardless of what the device will be used for. At the OS level they lay the foundation for ease of use in the topics of eye strain, screen real estate, and touch accessibility. At the application level they set you up for validating machine performance, establishing communication capabilities and security best practices.

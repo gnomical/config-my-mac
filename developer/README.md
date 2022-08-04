@@ -1,4 +1,4 @@
-### [config-my-mac](../) / <!-- omit in toc -->
+### [config-my-mac](../../../) / <!-- omit in toc -->
 ## Developer
 
 ### OS <!-- omit in toc -->

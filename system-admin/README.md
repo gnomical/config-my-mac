@@ -1,4 +1,4 @@
-### [config-my-mac](../) / <!-- omit in toc -->
+### [config-my-mac](../../../) / <!-- omit in toc -->
 ## System Admin
 
 ### Table of Contents <!-- omit in toc -->
