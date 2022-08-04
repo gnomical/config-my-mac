@@ -1,4 +1,4 @@
-### config-my-mac/ <!-- omit in toc -->
+### [config-my-mac](../) / <!-- omit in toc -->
 ## General (All Use Cases) <!-- omit in toc -->
 
 These are my preferences regardless of what the device will be used for. At the OS level they lay the foundation for ease of use in the topics of eye strain, screen real estate, and touch accessibility. At the application level they set you up for validating machine performance, establishing communication capabilities and security best practices.
@@ -19,6 +19,7 @@ These are my preferences regardless of what the device will be used for. At the 
     - [Proton Mail](#proton-mail)
 
 # Operating System
+
 ## Appearance
 Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[<sup>1</sup>](https://www.webmd.com/eye-health/prevent-digital-eyestrain) Sleep can be affected by blue light late in the day.[<sup>2</sup>](https://www.health.harvard.edu/staying-healthy/blue-light-has-a-dark-side) I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
 
@@ -59,6 +60,7 @@ and set the following:
 # Software
 
 ## Pre-Installed
+
 ### Screenshots
 MacOS has a built in tool for capturing screen content called *Screenshot*. I frequently take clips of my screen to include in things like documentation, emails, and direct messages to quickly show a colleague or friend some content. You can take a screenshot by pressing the key combination **⇧⌘4** and then clicking to drag around the area you want to snip. By default Keep screenshots from cluttering your desktop by creating a folder for them
   - Press **⇧⌘5** then under options > Save To > Other Location
@@ -93,6 +95,7 @@ Drag the following apps on top eachother to auto create a folder much like in iO
   - Does your score match other uploads for your same machine?
 
 ### Bitwarden
+> Add to Dock
   - Enable the Safari Extension
       - Safari > Preferences > Extensions > check Bitwarden
   - Use a unique password for every service
@@ -102,11 +105,14 @@ Drag the following apps on top eachother to auto create a folder much like in iO
       - Numbers
       - Symbols
       - Enable 2fa on every account that you can and opt for OTP where possible
+        - Store OTP codes in a separate app on a separate device. Otherwise, if your bitwarden account is compromised you will be SOL.
 
 ### Signal
+> Add to Dock
   - Secure, End-to-End encrypted messaging
   - Replace iMessage with this and tell your friends to as well
 
 ### Proton Mail
+> Add to Dock
   - Secure, End-to-End encrypted mail
   - Must use Proton Mail Bridge along with your email client of choice (apple mail, outlook, thunderbird)

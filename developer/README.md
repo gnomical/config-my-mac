@@ -1,3 +1,4 @@
+### [config-my-mac](../) / <!-- omit in toc -->
 ## Developer
 
 ### OS <!-- omit in toc -->
@@ -9,8 +10,8 @@
 **git**
   - Config your user name and email
       ```bash
-      $ git config --global user.name "FIRST_NAME LAST_NAME"
-      $ git config --global user.email "MY_NAME@users.noreply.github.com"
+      % git config --global user.name "FIRST_NAME LAST_NAME"
+      % git config --global user.email "MY_NAME@users.noreply.github.com"
       ```
     > **Note**:  
     > In order for gpg signing to work, the configured git username and email must match those set on your gpg key.
@@ -25,13 +26,13 @@
       - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
   - GPG key
       ```bash
-      $ brew install gnupg
+      % brew install gnupg
       ```
     - On an `Apple Silicon` machine you need another step for passphrase protected GPG signing
     ```bash
-    $ brew install pinentry-mac
-    $ echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
-    $ killall gpg-agent
+    % brew install pinentry-mac
+    % echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
+    % killall gpg-agent
     ```
     - follow the instructions on your git repo of choice for setting up GPG keys and signing commits
     - Github
@@ -39,7 +40,7 @@
       - Sign Commits https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
       - When committing changes in your local branch, add the -S flag to the git commit command:
           ```bash
-          $ git commit -S -m "your commit message"
+          % git commit -S -m "your commit message"
           # Creates a signed commit
           ```
           > 💡 **Tip**:  
@@ -49,7 +50,7 @@
       - Just run a git command, it will auto prompt to install
       ```bash
       # Clone this repo for instance
-      $ git clone https://github.com/gnomical/config-my-mac.git
+      % git clone https://github.com/gnomical/config-my-mac.git
       ```
 
 ### Software <!-- omit in toc -->
