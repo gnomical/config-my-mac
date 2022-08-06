@@ -23,6 +23,8 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 # Show Hidden/(.) Files
 defaults write com.apple.finder AppleShowAllFiles -bool true
+# Disable the creation of .DS_Store files
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Finder must restart for changes to take effect
 killall Finder
 

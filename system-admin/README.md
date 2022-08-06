@@ -36,10 +36,22 @@ Now for more useful information to be provided by the interface while browsing f
   - View > Show Path Bar
   - View > Show Status Bar
 
-And finally, macOS uses a number of files that are hidden from your everyday users. It does this through a simple pattern - any file beginning with a `.` is hidden. A common encounter is the `.DS_Store` files which contain data about how files are positioned on screen within a folder, among other things. Many applications utilize this hidden file feature to store meta data and preferences. To see these files we must run a terminal command.
+And finally, macOS uses a number of files that are hidden from your everyday users. It does this through a simple pattern - any file beginning with a `.` (full stop/period) is hidden and some system directories like `~/Library` and `~/Trash` are also hidden. A common encounter with hidden files has always been the `.DS_Store` files. 
+
+> **Warning**  
+> .DS_Store files are no longer visible in the finder even after enabling hidden file visibility, starting with macOS Monterey.  
+
+Hidden files are frequently discovered after copying files to another, non macOS system. Many applications utilize this hidden file feature to store meta data and preferences. To make sure you can always see these files you must run a Terminal command.
 ```bash
-% defaults write com.apple.Finder AppleShowAllFiles true
+% defaults write com.apple.finder AppleShowAllFiles -bool true
 ```
+
+For security purposes, it is sometimes recommended to remove the .DS_Store files completely (they can expose information in rare situations). In order to make sure macOS does not automatically create any more of them you can run another Terminal command.
+```bash
+% defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+```
+> **Note**  
+> Disabling .DS_Store files will prevent finder from remembering how you have visually positioned your files and folders. Upon a reboot, any changes you have made to how you view a particular folder in finder will be lost.
 
 ## rsync
 In macOS Monterey, Apple provides a custom rsync binary, v2.6.9 (16 years old), that has been modified to support extended attributes. 

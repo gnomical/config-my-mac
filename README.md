@@ -18,12 +18,9 @@ What you will find below a list of use cases each including a verbose descriptio
 
 ## Prerequisites
 
-**If** you will be using the automation scripts to perform any configurations and installs you will need to install the following, first.
-
-**Homebrew**
-  - https://brew.sh
-  - follow the instructions on their site  
-> **Note**:  
+**If** you will be using the automation scripts to perform any configurations and installs then the script will automatically attempt to install **Homebrew**. you can learn more about Homebrew on their website https://brew.sh
+ 
+> **Note**  
 > Don't forget to look for and follow the '**Next Steps**' in your terminal after brew is installed
 
 ## Use Cases
