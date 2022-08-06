@@ -1,7 +1,7 @@
 #!/bin/zsh
 emulate -LR zsh # reset zsh options
 
-#path of current script executing
+# path of currently executing script
 DIR=${0:a:h}
 # import common libraries
 source $DIR/../lib/console_codes.zsh
