@@ -80,3 +80,5 @@ You can check the version to confirm the one running is now ^v3.
 # rsync  version 3.2.4  protocol version 31
 # ..
 ```
+> **Note**  
+> Terminal will need to be restarted before it will execute the new binary.
