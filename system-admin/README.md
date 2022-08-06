@@ -10,7 +10,7 @@
 # Automated Config
 All of the manual configuration documented below has been distilled into a script housed within this repo at `./system-admin/config_my_mac.zsh`. To make all of the changes in an automated fashion please follow these instructions.
 
-First, pull this repo to your local machine. Just as I describe in the [developer README](developer#os-), I recommend cloning this to `~/Code`
+First, pull this repo to your local machine. Just as I describe in the [developer README](../developer#os-), I recommend cloning this to `~/Code`
 ```bash
 % cd ~/Code
 % git clone https://github.com/gnomical/config-my-mac.git
