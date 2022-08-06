@@ -42,24 +42,18 @@ fi
 if should_skip "rsync"; then
     echo -e "\nSkipping ${bold}rsync${reset} upgrade"
 else
-    # check that the include flag was not passed
-    # or that 'finder' was provided in its argument
-    if [[ ! -v include ]] || echo $include | grep -iqF "finder"; then
-        echo -e "\nChecking rsync"
+    echo -e "\nChecking rsync"
 
-        # get rsync version
-        rsync=$(rsync --version)
-        # check if rsync version matches defualt macOS provided version
-        if [[ $rsync == *"2.6.9"* ]]; then
-            echo "Updating rsync for compatability with remote systems."
-            brew install rsync
-            echo -e "\n${green_f}${bold}rsync${reset}${green_f} has been updated.${reset}"
-            echo "Your terminal needs to be restarted before it will execute the new binary."
-        else 
-            echo -e "${yellow_f}${bold}rsync${reset}${yellow_f} has already been modified from the default provided by macOS.${reset}"
-        fi
-    else
-        echo -e "\nSkipping ${bold}rsync${reset} upgrade"
+    # get rsync version
+    rsync=$(rsync --version)
+    # check if rsync version matches defualt macOS provided version
+    if [[ $rsync == *"2.6.9"* ]]; then
+        echo "Updating rsync for compatability with remote systems."
+        brew install rsync
+        echo -e "\n${green_f}${bold}rsync${reset}${green_f} has been updated.${reset}"
+        echo "Your terminal needs to be restarted before it will execute the new binary."
+    else 
+        echo -e "${yellow_f}${bold}rsync${reset}${yellow_f} has already been modified from the default provided by macOS.${reset}"
     fi
 fi
 

@@ -3,12 +3,14 @@
 
 ### Table of Contents <!-- omit in toc -->
 - [Automated Config](#automated-config)
+  - [Options](#options)
 - [Manual Documentation](#manual-documentation)
   - [Finder](#finder)
   - [rsync](#rsync)
 
 # Automated Config
 All of the manual configuration documented below has been distilled into a script housed within this repo.
+
 <details>
 <summary>Expand For Script Details</summary>
 
@@ -27,8 +29,20 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 % cd ~/Code/config-my-mac
 % ./system-admin/config_my_mac.zsh
 ```
+## Options
+| flag          | summary                                 |
+| :------------ | :-------------------------------------- |
+| -e, --exclude | comma separated list of modules to skip |
+| -i, --include | comma separated list of modules to run  |
+> **Note**  
+> The presence of includes will cause everything not included to be excluded. Even in the event excludes are also provided.  
+
+> **Warning**  
+> If a module that will run requires homebrew then the script will attempt to install and/or update homebrew.  
+> To override this behavior exclude brew. `-e brew`
   
 </details>  
+
 <br/>  
 
 # Manual Documentation
@@ -62,6 +76,8 @@ For security purposes, it is sometimes recommended to remove the .DS_Store files
 > Disabling .DS_Store files will prevent finder from remembering how you have visually positioned your files and folders. Upon a reboot, any changes you have made to how you view a particular folder in finder will be lost.
 
 ## rsync
+<sup><sub>This module will require **Homebrew** to complete</sub></sup>
+
 In macOS Monterey, Apple provides a custom rsync binary, v2.6.9 (16 years old), that has been modified to support extended attributes. 
 ```bash
 % rsync --version
