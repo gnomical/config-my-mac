@@ -7,14 +7,16 @@ DIR=${0:a:h}
 source $DIR/../lib/console_codes.zsh
 source $DIR/../lib/getopts.zsh
 
-# check for homebrew and updates
-source $DIR/../lib/brew_check.zsh
+# check for homebrew and updates if rsync update will be attempted
+if ! should_skip "rsync"; then
+    source $DIR/../lib/brew_check.zsh
+fi
 
 #########
 # Finder
 #########
-if echo $exclude | grep -iqF "finder"; then
-    echo "\nSkipping ${bold}Finder${reset} configuration"
+if should_skip "finder"; then
+    echo -e "\nSkipping ${bold}Finder${reset} configuration"
 else
     echo -e "\nSetting preferences for Finder."
 
@@ -37,21 +39,27 @@ fi
 ########
 # rsync
 ########
-if echo $exclude | grep -iqF "rsync"; then
-    echo "\nSkipping ${bold}rsync${reset} upgrade"
+if should_skip "rsync"; then
+    echo -e "\nSkipping ${bold}rsync${reset} upgrade"
 else
-    echo -e "\nChecking rsync"
+    # check that the include flag was not passed
+    # or that 'finder' was provided in its argument
+    if [[ ! -v include ]] || echo $include | grep -iqF "finder"; then
+        echo -e "\nChecking rsync"
 
-    # get rsync version
-    rsync=$(rsync --version)
-    # check if rsync version matches defualt macOS provided version
-    if [[ $rsync == *"2.6.9"* ]]; then
-        echo "Updating rsync for compatability with remote systems."
-        brew install rsync
-        echo -e "\n${green_f}${bold}rsync${reset}${green_f} has been updated.${reset}"
-        echo "Your terminal needs to be restarted before it will execute the new binary."
-    else 
-        echo -e "${yellow_f}${bold}rsync${reset}${yellow_f} has already been modified from the default provided by macOS.${reset}"
+        # get rsync version
+        rsync=$(rsync --version)
+        # check if rsync version matches defualt macOS provided version
+        if [[ $rsync == *"2.6.9"* ]]; then
+            echo "Updating rsync for compatability with remote systems."
+            brew install rsync
+            echo -e "\n${green_f}${bold}rsync${reset}${green_f} has been updated.${reset}"
+            echo "Your terminal needs to be restarted before it will execute the new binary."
+        else 
+            echo -e "${yellow_f}${bold}rsync${reset}${yellow_f} has already been modified from the default provided by macOS.${reset}"
+        fi
+    else
+        echo -e "\nSkipping ${bold}rsync${reset} upgrade"
     fi
 fi
 
