@@ -28,9 +28,22 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Finder must restart for changes to take effect
 killall Finder
 
-echo -e "${bold}Finder${normal} has been updated and restarted."
+echo -e "${green_f}${bold}Finder${reset}${green_f} has been updated and restarted.${reset}"
 
 # rsync
 # -----
+echo -e "\nChecking rsync"
 
+# get rsync version
+rsync=$(rsync --version)
+# check if rsync version matches defualt macOS provided version
+if [[ $rsync == *"2.6.9"* ]]; then
+    echo -e "Updating rsync for compatability with remote systems."
+    # brew install rsync
+    echo -e "${red_f}${bold}rsync${reset}${red_f} has not been updated.${reset}"
+else 
+    echo -e "${yellow_f}${bold}rsync${reset}${yellow_f} has already been modified from the default provided by macOS.${reset}"
+fi
+
+# leave space above next terminal prompt for readability
 echo -e ""
