@@ -4,9 +4,8 @@
 ### Table of Contents <!-- omit in toc -->
 - [Automated Config](#automated-config)
 - [Manual Documentation](#manual-documentation)
-  - [Operating System](#operating-system)
-    - [Finder](#finder)
-    - [rsync](#rsync)
+  - [Finder](#finder)
+  - [rsync](#rsync)
 
 # Automated Config
 All of the manual configuration documented below has been distilled into a script housed within this repo at `./system-admin/config_my_mac.zsh`. To make all of the changes in an automated fashion please follow these instructions.
@@ -25,8 +24,7 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 ```
 
 # Manual Documentation
-## Operating System
-### Finder
+## Finder
 By default Finder keeps it simple. No file extensions. But this means if you need to change a file's extension you can't do it without a terminal.
 
 To correct this, open Finder.  
@@ -43,7 +41,7 @@ And finally, macOS uses a number of files that are hidden from your everyday use
 % defaults write com.apple.Finder AppleShowAllFiles true
 ```
 
-### rsync
+## rsync
 In macOS Monterey, Apple provides a custom rsync binary, v2.6.9 (16 years old), that has been modified to support extended attributes. 
 ```bash
 % rsync --version
