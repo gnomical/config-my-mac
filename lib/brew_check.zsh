@@ -1,8 +1,12 @@
-# prepare homebrew for use
-if ! command -v brew &> /dev/null ; then
-    # Install Homebrew
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if echo $exclude | grep -iqF "brew"; then
+    echo "\nSkipping Homebrew management"
 else
-    echo -e "\nChecking Homebrew for updates."
-    brew update
+    # prepare homebrew for use
+    if ! command -v brew &> /dev/null ; then
+        # Install Homebrew
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    else
+        echo -e "\nChecking Homebrew for updates."
+        brew update
+    fi
 fi
