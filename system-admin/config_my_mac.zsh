@@ -1,18 +1,11 @@
 #!/bin/zsh
 emulate -LR zsh # reset zsh options
 
-# common linux console_codes
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-# prepare homebrew for use
-if ! command -v brew &> /dev/null ; then
-    # Install Homebrew
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-    echo -e "\nChecking Homebrew for updates."
-    brew update
-fi
+#path of current script executing
+DIR=${0:a:h}
+# import common libraries
+source $DIR/../lib/console_codes.zsh
+source $DIR/../lib/brew_check.zsh
 
 ##################
 # Operating System
@@ -20,7 +13,6 @@ fi
 
 # Finder
 # ------
-
 echo -e "\nSetting preferences for Finder."
 
 # Show all filename extensions
@@ -38,3 +30,5 @@ echo -e "${bold}Finder${normal} has been updated and restarted."
 
 # rsync
 # -----
+
+echo -e ""
