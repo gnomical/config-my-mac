@@ -39,8 +39,9 @@ rsync=$(rsync --version)
 # check if rsync version matches defualt macOS provided version
 if [[ $rsync == *"2.6.9"* ]]; then
     echo -e "Updating rsync for compatability with remote systems."
-    # brew install rsync
-    echo -e "${red_f}${bold}rsync${reset}${red_f} has not been updated.${reset}"
+    brew install rsync
+    echo -e "\n${green_f}${bold}rsync${reset}${green_f} has been updated.${reset}"
+    echo -e "Your terminal needs to be restarted before it will execute the new binary."
 else 
     echo -e "${yellow_f}${bold}rsync${reset}${yellow_f} has already been modified from the default provided by macOS.${reset}"
 fi
