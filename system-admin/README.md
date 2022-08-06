@@ -2,9 +2,26 @@
 ## System Admin
 
 ### Table of Contents <!-- omit in toc -->
+- [Automated Config](#automated-config)
 - [Operating System](#operating-system)
   - [Finder](#finder)
   - [rsync](#rsync)
+
+# Automated Config
+All of the manual configuration documented below has been distilled into a script housed within this repo at `./system-admin/config_my_mac.zsh`. To make all of the changes in an automated fashion please follow these instructions.
+
+First, pull this repo to your local machine. Just as I describe in the [developer README](developer#os-), I recommend cloning this to `~/Code`
+```bash
+% cd ~/Code
+% git clone https://github.com/gnomical/config-my-mac.git
+```
+Running git for the first time may prompt you to install `Command Line Developer Tools`, just follow the prompts.
+
+Next, run the script. It will install and/or upgrade brew and then run through all the configs documented in this **system-admin** section.
+```bash
+% cd ~/Code/config-my-mac
+% ./system-admin/config_my_mac.zsh
+```
 
 # Operating System
 ## Finder
