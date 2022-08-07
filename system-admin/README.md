@@ -55,7 +55,7 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 By default Finder keeps it simple. No file extensions. But this means if you need to change a file's extension you can't do it without a terminal.
 
 To correct this, open Finder.  
-Go to: **Preferences -> Advanced**  
+Go to: **Preferences → Advanced**  
 and check
   - [x] Show all filename extensions
 
