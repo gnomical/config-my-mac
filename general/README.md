@@ -86,11 +86,13 @@ and set the following:
 - Remove all icons from dock except:  
   Finder, Settings, Downloads, Trash
 
-> **Note**:  
+> **Note**  
 > Subsequent configs may fill the dock with other apps
 
-> 💡 **Tip**:  
-> For fast access to apps sans the dock you can either open launchpad (4 finger pinch on a trackpad) or you can use my favorite, **⌘ Space**, to launch spotlight search.
+> 💡 **Tip**  
+> For fast access to apps that are not in the dock you can:
+> 1. open launchpad (4 finger pinch on a trackpad) or 
+> 2. my favorite, **⌘ Space**, to launch spotlight search.
 
 ## Trackpad
 Pointer options can be very personal, but these are the settings I prefer for productivity.

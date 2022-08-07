@@ -19,6 +19,14 @@ source $DIR/../lib/getopts.zsh
 #     source $DIR/../lib/brew_check.zsh
 # fi
 
+# in the case of modifying system preferences
+if ! should_skip "theme" || \
+   ! should_skip "dock" || \
+   ! should_skip "dock"; then
+   # Close open System Preferences panes, to prevent them from overriding settings.
+    osascript -e 'tell application "System Preferences" to quit'
+fi
+
 restart_required=false
 
 ########
@@ -29,8 +37,6 @@ if should_skip "theme"; then
 else
     echo -e "\nSetting system theme."
 
-    # Close open System Preferences panes, to prevent them from overriding settings.
-    osascript -e 'tell application "System Preferences" to quit'
     # disable automatic theme switching 
     defaults write NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
     defaults delete NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically
@@ -58,6 +64,26 @@ fi
 #######
 # Dock
 #######
+if should_skip "dock"; then
+    echo -e "\nSkipping ${bold}Dock${reset} setup"
+else
+    echo -e "\nSetting up the Dock"
+
+    # set the size of icons in the dock
+    defaults write com.apple.dock tilesize -int 28
+    # position dock on left of screen
+    defaults write com.apple.dock orientation -string "left"
+    # set the dock to autohide
+    defaults write com.apple.dock autohide -bool true
+    # stop recent apps from showing in the dock
+    defaults write com.apple.dock show-recents -bool false
+
+    # Dock must restart for changes to take effect
+    killall Dock
+
+    echo "${green_f}The ${bold}Dock${reset}${green_f} has been set up.${reset}"
+
+fi
 
 ###########
 # Trackpad
