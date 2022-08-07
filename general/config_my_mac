@@ -52,7 +52,7 @@ else
     fi
 
     echo "${green_f}${bold}System Theme${reset}${green_f} has been set.${reset}"
-    
+
 fi
 
 #######
@@ -62,6 +62,30 @@ fi
 ###########
 # Trackpad
 ###########
+if should_skip "trackpad"; then
+    echo -e "\nSkipping ${bold}Trackpad${reset} configuration"
+else
+    echo -e "\nSetting Trackpad preferences"
+    # enable tap to click
+    defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+    # TODO: for some reason the checkbox isn't checked, but it works
+
+    # set the click force
+    defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
+    defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
+
+    # set cursor tracking speed (scale of 0-3)
+    # [0, 0.125, 0.5, 0.6875, 0.875, 1, 1.5, 2, 2.5, 3]
+    defaults write NSGlobalDomain com.apple.trackpad.scaling 2.5
+
+    # TODO: can't figure out which process to restart to have changes take effect
+    restart_required=true
+    echo "${pink_f}System must restart for trackpad preferences to take effect.${reset}"
+
+    echo "${green_f}${bold}Trackpad${reset}${green_f} preferences have been set.${reset}"
+
+fi
 
 #################
 # screenshot.app

@@ -4,6 +4,7 @@
 These are my preferences regardless of what the device will be used for. At the OS level they lay the foundation for ease of use in the topics of eye strain, screen real estate, and touch accessibility. At the application level they set you up for validating machine performance, establishing communication capabilities and security best practices.
 
 ### Table of Contents <!-- omit in toc -->
+- [Automated Config](#automated-config)
 - [Operating System](#operating-system)
   - [Theme](#theme)
   - [Dock](#dock)
@@ -17,6 +18,50 @@ These are my preferences regardless of what the device will be used for. At the 
     - [Bitwarden](#bitwarden)
     - [Signal](#signal)
     - [Proton Mail](#proton-mail)
+
+# Automated Config
+All of the manual configuration documented below has been distilled into a script housed within this repo.
+
+<details>
+<summary>Expand For Script Details</summary>
+
+## How to use the script <!-- omit in toc -->
+The script for the system-admin group of configs can be found at `./system-admin/config_my_mac`. To make all of the changes in an automated fashion please follow these instructions.
+
+First, pull this repo to your local machine. Just as I describe in the developer [README](../developer#os-), I recommend cloning this to `~/Code`
+```bash
+% cd ~/Code
+% git clone https://github.com/gnomical/config-my-mac.git
+```
+Running git for the first time may prompt you to install `Command Line Developer Tools`, just follow the prompts.
+
+Next, run the script. It will install and/or upgrade brew and then run through all the configs documented within this section.
+```bash
+% cd ~/Code/config-my-mac
+% ./system-admin/config_my_mac
+```
+## CLI Options  <!-- omit in toc -->
+| flag          | summary                                               |
+| :------------ | :---------------------------------------------------- |
+| -e, --exclude | comma separated list of modules to skip               |
+| -i, --include | comma separated list of modules to run                |
+| -f, --force   | when present, will run the script without human input |
+> **Note**  
+> The presence of includes will cause everything not included to be excluded. Even in the event excludes are also provided.  
+
+> **Warning**  
+> If a module that will run requires homebrew then the script will attempt to install and/or update homebrew.  
+> To override this behavior exclude brew. `-e brew`
+```bash
+# Example excluding the proton-mail module
+# because the other software modules will use homebrew
+# you can also specify to exclude the homebrew update
+% ./system-admin/config_my_mac -e proton-mail,brew
+```
+  
+</details>  
+
+<br/> 
 
 # Operating System
 
