@@ -21,8 +21,11 @@ do
     esac
 done
 
-# helper for identifying if a code block should run based on flags
-# (some_string) $1 = the text to match against the -i and -e arguments
+# Identify if a module should run based on flag arguments
+# Arguments:
+#   (some_string) $1 = the text to match against the -i and -e arguments
+# Returns:
+#   boolean
 should_skip() {
     # check 'some_string' was an argument via the exclude flag
     # OR that the include flag was passed AND 'some_string' was not found in its argument

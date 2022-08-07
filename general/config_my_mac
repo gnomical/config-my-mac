@@ -1,0 +1,74 @@
+#!/bin/zsh
+#
+# Configures    System Theme, Dock, Trackpad, Screenshots
+# Uninstalls    iMovie, GarageBand
+# Installs      Geekbench, Bitwarden, Signal, Proton Mail
+emulate -LR zsh # reset zsh options
+
+# path of currently executing script
+DIR=${0:a:h}
+# import common libraries
+source $DIR/../lib/console_codes.zsh
+source $DIR/../lib/getopts.zsh
+
+# check for homebrew and updates if software installs will occur
+# if ! should_skip "geekbench" && \
+#    ! should_skip "bitwarden" && \
+#    ! should_skip "signal" && \
+#    ! should_skip "protonmail"; then
+#     source $DIR/../lib/brew_check.zsh
+# fi
+
+restart_required=false
+
+########
+# Theme
+########
+if should_skip "theme"; then
+    echo -e "\nSkipping ${bold}System Theme${reset} configuration"
+else
+    echo -e "\nSetting system theme."
+
+    # Close open System Preferences panes, to prevent them from overriding settings.
+    osascript -e 'tell application "System Preferences" to quit'
+    # disable automatic theme switching 
+    defaults write NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
+    defaults delete NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically
+    # Set the system theme to dark
+    defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+    # UI must restart for changes to take effect
+    if [ "$force" = true ]; then
+        restart_required=true
+        echo "${pink_f}System must restart for theme change to take effect.${reset}"
+    else
+        echo -e "\n${bold}Attention${reset}:"
+        echo "macOS may request permission to control 'System Events' in order to set dark mode."
+        # echo without newline
+        echo -n "Press any key when ready.."
+        read -k -s
+        # terminal escape - ^^ delete everything on current line 
+        echo -e "\033[2K"
+        osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = true" >/dev/null
+    fi
+
+    echo "${green_f}${bold}System Theme${reset}${green_f} has been set.${reset}"
+    
+fi
+
+#######
+# Dock
+#######
+
+###########
+# Trackpad
+###########
+
+#################
+# screenshot.app
+#################
+
+if $restart_required; then
+    echo -e "\n${bold}Note${reset}: Some changes require a ${pink_f}logout and/or restart${reset} to take effect"
+fi
+# leave space above next terminal prompt for readability
+echo ""

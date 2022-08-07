@@ -8,6 +8,7 @@ bold=$(tput bold)
 red_f=$(tput setaf 1)
 green_f=$(tput setaf 2)
 yellow_f=$(tput setaf 3)
+pink_f=$(tput setaf 5)
 
 # reset
 reset=$(tput sgr0)

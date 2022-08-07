@@ -14,7 +14,7 @@ All of the manual configuration documented below has been distilled into a scrip
 <summary>Expand For Script Details</summary>
 
 ## How to use the script <!-- omit in toc -->
-The script for the system-admin group of configs can be found at `./system-admin/config_my_mac.zsh`. To make all of the changes in an automated fashion please follow these instructions.
+The script for the system-admin group of configs can be found at `./system-admin/config_my_mac`. To make all of the changes in an automated fashion please follow these instructions.
 
 First, pull this repo to your local machine. Just as I describe in the developer [README](../developer#os-), I recommend cloning this to `~/Code`
 ```bash
@@ -26,7 +26,7 @@ Running git for the first time may prompt you to install `Command Line Developer
 Next, run the script. It will install and/or upgrade brew and then run through all the configs documented within this section.
 ```bash
 % cd ~/Code/config-my-mac
-% ./system-admin/config_my_mac.zsh
+% ./system-admin/config_my_mac
 ```
 ## CLI Options  <!-- omit in toc -->
 | flag          | summary                                 |
@@ -43,7 +43,7 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 # Example excluding the finder module
 # and because the rsync module will use homebrew
 # also specifying to exclude the homebrew update
-% ./system-admin/config_my_mac.zsh -e finder,brew
+% ./system-admin/config_my_mac -e finder,brew
 ```
   
 </details>  

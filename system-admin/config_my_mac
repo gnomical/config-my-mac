@@ -1,4 +1,6 @@
 #!/bin/zsh
+#
+# Configures Finder and updates rsync
 emulate -LR zsh # reset zsh options
 
 # path of currently executing script

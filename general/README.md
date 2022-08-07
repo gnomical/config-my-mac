@@ -5,7 +5,7 @@ These are my preferences regardless of what the device will be used for. At the 
 
 ### Table of Contents <!-- omit in toc -->
 - [Operating System](#operating-system)
-  - [Appearance](#appearance)
+  - [Theme](#theme)
   - [Dock](#dock)
   - [Trackpad](#trackpad)
 - [Software](#software)
@@ -20,8 +20,8 @@ These are my preferences regardless of what the device will be used for. At the 
 
 # Operating System
 
-## Appearance
-Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[<sup>1</sup>](https://www.webmd.com/eye-health/prevent-digital-eyestrain) Sleep can be affected by blue light late in the day.[<sup>2</sup>](https://www.health.harvard.edu/staying-healthy/blue-light-has-a-dark-side) I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
+## Theme
+Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[<sup>[1]</sup>](https://www.webmd.com/eye-health/prevent-digital-eyestrain) Sleep can be affected by blue light late in the day.[<sup>[2]</sup>](https://www.health.harvard.edu/staying-healthy/blue-light-has-a-dark-side) I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
 
 Go to: **System Preferences -> General**  
 and set the following:
