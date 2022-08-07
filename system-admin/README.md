@@ -39,6 +39,12 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 > **Warning**  
 > If a module that will run requires homebrew then the script will attempt to install and/or update homebrew.  
 > To override this behavior exclude brew. `-e brew`
+```bash
+# Example excluding the finder module
+# and because the rsync module will use homebrew
+# also specifying to exclude the homebrew update
+% ./system-admin/config_my_mac.zsh -e finder,brew
+```
   
 </details>  
 
