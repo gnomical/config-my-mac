@@ -1,4 +1,4 @@
-# config-my-mac / ***2022*** *macOS 12.4* <!-- omit in toc -->
+# config-my-mac <sup><sub>/ ***2022*** *macOS 12.4*</sub></sup> <!-- omit in toc -->
 Documentation and scripts for quickly configuring a new Mac for various personal and professional use cases.
 
 ### Table of Contents <!-- omit in toc -->

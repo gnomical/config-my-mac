@@ -128,8 +128,8 @@ MacOS has a built in tool for capturing screen content called *Screenshot*. I fr
   - Create a new folder:  
     `~/Documents/Screenshots`
 
-> **Note**
-> You may use the key combination ⌘^⇧4 to take a screenshot directly to your clipboard. This bypasses savign to disk and can reduce clutter
+> **Note**  
+> You may use the key combination **⌘^⇧4** to take a screenshot directly to your clipboard. This bypasses savign to disk and can reduce clutter
 
 ### Bloatware
 ![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Partial&color=c90)
