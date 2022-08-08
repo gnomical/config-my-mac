@@ -121,10 +121,15 @@ and set the following:
 ## Pre-Installed
 
 ### Screenshots
+![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+
 MacOS has a built in tool for capturing screen content called *Screenshot*. I frequently take clips of my screen to include in things like documentation, emails, and direct messages to quickly show a colleague or friend some content. You can take a screenshot by pressing the key combination **⇧⌘4** and then clicking to drag around the area you want to snip. By default Keep screenshots from cluttering your desktop by creating a folder for them
   - Press **⇧⌘5** then under options > Save To > Other Location
   - Create a new folder:  
     `~/Documents/Screenshots`
+
+> **Note**
+> You may use the key combination ⌘^⇧4 to take a screenshot directly to your clipboard. This bypasses savign to disk and can reduce clutter
 
 ### Bloatware
 ![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Partial&color=c90)

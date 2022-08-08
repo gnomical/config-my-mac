@@ -117,6 +117,22 @@ fi
 #################
 # screenshot.app
 #################
+if should_skip "screenshot"; then
+    echo -e "\nSkipping ${bold}Screenshot.app${reset} configuration";
+else
+    echo -e "\nConfiguring screenshot.app"
+
+    saveDir=~/Desktop/Screenshots
+    # creating a dir on the desktop
+    mkdir $saveDir 2>/dev/null
+    # set the save dir
+    defaults write com.apple.screencapture location -string $saveDir;
+    # default the save view to the dir next time it opens
+    defaults write com.apple.screencaptureui NSNavLastRootDirectory -string $saveDir;
+    
+    echo "${green_f}${bold}Screenshot.app${reset}${green_f} has been configured.${reset}"
+    
+fi
 
 ########
 # bloat
