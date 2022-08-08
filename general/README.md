@@ -179,3 +179,5 @@ Drag the following apps on top eachother to auto create a folder much like in iO
 > Add to Dock
   - Secure, End-to-End encrypted mail
   - Must use Proton Mail Bridge along with your email client of choice (apple mail, outlook, thunderbird)
+
+# References <!-- omit in toc -->
