@@ -51,7 +51,8 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 <br/>  
 
 # Manual Documentation
-## Finder
+## Finder  
+<sup><sub>`Automation Available`</sub></sup>  
 By default Finder keeps it simple. No file extensions. But this means if you need to change a file's extension you can't do it without a terminal.
 
 To correct this, open Finder.  
@@ -80,7 +81,8 @@ For security purposes, it is sometimes recommended to remove the .DS_Store files
 > **Note**  
 > Disabling .DS_Store files will prevent finder from remembering how you have visually positioned your files and folders. Upon a reboot, any changes you have made to how you view a particular folder in finder will be lost.
 
-## rsync
+## rsync  
+<sup><sub>`Automation Available`</sub></sup>  
 > <sup><sub>This module will require **Homebrew** to complete</sub></sup>
 
 In macOS Monterey, Apple provides a custom rsync binary, v2.6.9 (16 years old), that has been modified to support extended attributes. 

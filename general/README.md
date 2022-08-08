@@ -65,7 +65,8 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 
 # Operating System
 
-## Theme
+## Theme  
+<sup><sub>`Automation Available`</sub></sup>  
 Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[^eye_strain]  Sleep can be affected by blue light late in the day.[^blue_light]  I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
 
 [^eye_strain]: Computer Eye Strain: How to Prevent Eye Strain From Screen Time  
@@ -78,7 +79,8 @@ Go to: **System Preferences → General**
 and set the following:
 - Appearance: Dark
 
-## Dock
+## Dock  
+<sup><sub>`Automation Available`</sub></sup>  
 The dock is one of those things that seems to be abused by Apple out of the box. It comes overloaded with bloatware, occupies a good percentage of the screen height, and can quickly become more of a drawback than an asset. These tweaks will keep the Dock out of your way until you need it.
 
 Go to: **System Preferences → Dock & Menu Bar**  
@@ -96,11 +98,12 @@ and set the following:
 > Subsequent configs may fill the dock with other apps
 
 > 💡 **Tip**  
-> For fast access to apps that are not in the dock you can:
-> 1. open launchpad (4 finger pinch on a trackpad) or 
-> 2. my favorite, **⌘ Space**, to launch spotlight search.
+> For fast access to apps that are not in the dock you can:  
+> open launchpad (4 finger pinch on a trackpad) or  
+> my favorite, **⌘ Space**, to launch spotlight search.
 
-## Trackpad
+## Trackpad  
+<sup><sub>`Automation Available`</sub></sup>  
 Pointer options can be very personal, but these are the settings I prefer for productivity.
 
 Go to: **System Preferences → Trackpad → Point & Click**  
