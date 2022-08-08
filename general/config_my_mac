@@ -176,6 +176,38 @@ else
     else
         echo "Skipping removal of iMovie";
     fi
+
+    # GarageBand
+    # ----------
+    if [ "$force" != true ]; then
+        echo -e "\n${yellow_f}${bold}Warning${reset}:"
+        echo  "Garageband and any associated data is about to be deleted. This can not be undone."
+        read -q "REPLY?Do you want to proceed? (y/n) " -k
+        echo # move to a new line
+    fi
+    if [ "$force" = true ] || [[ $REPLY =~ ^[Yy]$ ]]; then
+
+        # remove associated data
+        rm -rf ~/Library/Application\ Scripts/com.apple.STMExtension.GarageBand
+        rm -rf /Library/Audio/Apple\ Loops/Apple/Apple\ Loops\ for\ GarageBand
+
+        # remove the .app
+        if [ "$force" = true ]; then
+            final_notes+="\n${yellow_f}${bold}GarageBand${reset}${yellow_f} requires escalated permissions and was ${bold}not${reset}${yellow_f} removed.${reset}"
+            final_notes+="\nThis was skipped because the [-f] flag was passed and escalated permissions require user input.\n"
+            
+            echo -e "\n${yellow_f}${bold}GarageBand${reset}${yellow_f} was not removed. Only its associated data was successfully removed.${reset}"
+        else 
+            echo -e "\nGarageBand requires escalated permissions to remove.\nPlease enter your login credentials below."
+            sudo rm -rf /Applications/GarageBand.app
+            sudo rm -rf /Library/Application\ Support/GarageBand
+
+            echo "${green_f}${bold}GarageBand${reset}${green_f} and its associated data have been removed.${reset}"
+        fi
+
+    else
+        echo "Skipping removal of GarageBand";
+    fi
     
 fi
 
