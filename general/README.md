@@ -12,7 +12,7 @@ These are my preferences regardless of what the device will be used for. At the 
 - [Software](#software)
   - [Pre-Installed](#pre-installed)
     - [Screenshots](#screenshots)
-    - [Bloat](#bloat)
+    - [Bloatware](#bloatware)
   - [Third Party](#third-party)
     - [Geekbench](#geekbench)
     - [Bitwarden](#bitwarden)
@@ -66,7 +66,13 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 # Operating System
 
 ## Theme
-Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[<sup>[1]</sup>](https://www.webmd.com/eye-health/prevent-digital-eyestrain) Sleep can be affected by blue light late in the day.[<sup>[2]</sup>](https://www.health.harvard.edu/staying-healthy/blue-light-has-a-dark-side) I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
+Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[^eye_strain](https://www.webmd.com/eye-health/prevent-digital-eyestrain) Sleep can be affected by blue light late in the day.[^blud_light](https://www.health.harvard.edu/staying-healthy/blue-light-has-a-dark-side) I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
+
+[^eye_strain]: Computer Eye Strain: How to Prevent Eye Strain From Screen Time  
+  Williams  
+  https://www.webmd.com/eye-health/prevent-digital-eyestrain  
+[^blue_light]: Blue light has a dark side  
+  https://www.health.harvard.edu/staying-healthy/blue-light-has-a-dark-side  
 
 Go to: **System Preferences → General**  
 and set the following:
@@ -114,26 +120,36 @@ MacOS has a built in tool for capturing screen content called *Screenshot*. I fr
   - Create a new folder:  
     `~/Documents/Screenshots`
 
-### Bloat
+### Bloatware
 Removing most of these items from the dock earlier was just the beginning. Let's see what we can do about its presence everywhere else.  
+In total, these applications take up a good chunk of disk space (4.24 GB).  For the items we can remove you will see itemized sizes below.  
 
 Launch Finder and navigate to `Applications`. Uninstall the following by dragging their icons to the trash.
-- iMovie
-- GarageBand
+- iMovie `2.64 GB`
+- GarageBand `1.26 GB`
+
+> **Note**  
+> There are several files associated to these applications that can also be safely removed. If you are comfortable with the terminal you can use `mdfind` to track them down.
+> ```bash
+> # Example
+> % mdfind -name "garage band"
+> % ...
+> ```
+> However, all that work has already been done for you in the autmation script included in this repo, `./general/config_my_mac`.
 
 There are also several pre-installed applications that cannot be trashed because they are essential to built in OS functions. So that they don't distract us and to make Launchpad easier to navigate, let's put them in a tidy box.
 
 Bring Launchpad up by four finger pinching on the trackpad.  
 (Place your thumb in the bottom left and three fingers in the top right)
 Drag the following apps on top eachother to auto create a folder much like in iOS. Then rename that folder to `Apple Clutter`.
-- Facetime
-- Maps
-- Messages
-- Music
-- News
-- Podcasts
-- Stocks
-- TV
+- Facetime `15.4 MB`
+- Maps `80.2 MB`
+- Messages `5.6 MB`
+- Music `102.8 MB`
+- News `10.8 MB`
+- Podcasts `45.2 MB`
+- Stocks `4.1 MB`
+- TV `77.5 MB`
 
 ## Third Party
 
