@@ -66,7 +66,7 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 # Operating System
 
 ## Theme
-Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[^eye_strain](https://www.webmd.com/eye-health/prevent-digital-eyestrain) Sleep can be affected by blue light late in the day.[^blud_light](https://www.health.harvard.edu/staying-healthy/blue-light-has-a-dark-side) I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
+Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[^eye_strain]  Sleep can be affected by blue light late in the day.[^blue_light]  I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
 
 [^eye_strain]: Computer Eye Strain: How to Prevent Eye Strain From Screen Time  
   Williams  
