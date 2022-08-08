@@ -6,7 +6,7 @@ These are my preferences regardless of what the device will be used for. At the 
 ### Table of Contents <!-- omit in toc -->
 - [Automated Config](#automated-config)
 - [Operating System](#operating-system)
-  - [<div align="right">!Automation Progress</div>Theme](#div-alignrightdivtheme)
+  - [Theme](#theme)
   - [Dock](#dock)
   - [Trackpad](#trackpad)
 - [Software](#software)
@@ -65,7 +65,9 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 
 # Operating System
 
-## <div align="right">![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)</div>Theme
+## Theme  
+![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+
 Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[^eye_strain]  Sleep can be affected by blue light late in the day.[^blue_light]  I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
 
 [^eye_strain]: Computer Eye Strain: How to Prevent Eye Strain From Screen Time  
@@ -79,7 +81,8 @@ and set the following:
 - Appearance: Dark
 
 ## Dock  
-<sub>![Automation Progress](https://img.shields.io/static/v1?label=Automation&message=Available&color=success)</sub>  
+![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+
 The dock is one of those things that seems to be abused by Apple out of the box. It comes overloaded with bloatware, occupies a good percentage of the screen height, and can quickly become more of a drawback than an asset. These tweaks will keep the Dock out of your way until you need it.
 
 Go to: **System Preferences → Dock & Menu Bar**  
@@ -102,7 +105,8 @@ and set the following:
 > my favorite, **⌘ Space**, to launch spotlight search.
 
 ## Trackpad  
-<sub>![Automation Progress](https://img.shields.io/static/v1?label=Automation&message=Available&color=success)</sub>  
+![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+
 Pointer options can be very personal, but these are the settings I prefer for productivity.
 
 Go to: **System Preferences → Trackpad → Point & Click**  
@@ -123,7 +127,8 @@ MacOS has a built in tool for capturing screen content called *Screenshot*. I fr
     `~/Documents/Screenshots`
 
 ### Bloatware
-<sub>![Automation Progress](https://img.shields.io/static/v1?label=Automation&message=Partial&color=yellow)</sub>  
+![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Partial&color=c90)
+
 Removing most of these items from the dock earlier was just the beginning. Let's see what we can do about its presence everywhere else.  
 In total, these applications take up a good chunk of disk space (4.24 GB).  For the items we can remove you will see itemized sizes below.  
 
