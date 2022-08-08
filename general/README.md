@@ -6,7 +6,7 @@ These are my preferences regardless of what the device will be used for. At the 
 ### Table of Contents <!-- omit in toc -->
 - [Automated Config](#automated-config)
 - [Operating System](#operating-system)
-  - [Theme](#theme)
+  - [Theme <div align="right">!Automation Progress</div>](#theme-div-alignrightdiv)
   - [Dock](#dock)
   - [Trackpad](#trackpad)
 - [Software](#software)
@@ -65,8 +65,7 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 
 # Operating System
 
-## Theme  
-<sub>![Automation Progress](https://img.shields.io/static/v1?label=Automation&message=Available&color=success)</sub>  
+## Theme <div align="right">![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)</div>  
 Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[^eye_strain]  Sleep can be affected by blue light late in the day.[^blue_light]  I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
 
 [^eye_strain]: Computer Eye Strain: How to Prevent Eye Strain From Screen Time  
