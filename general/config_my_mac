@@ -53,8 +53,7 @@ else
         # echo without newline
         echo -n "Press any key when ready.."
         read -k -s
-        # terminal escape - ^^ delete everything on current line 
-        echo -e "\033[2K"
+        echo -e "\033[2K" # terminal escape - ^^ delete everything on current line 
         osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = true" >/dev/null
     fi
 
@@ -146,7 +145,7 @@ else
     # ------
     if [ "$force" != true ]; then
         echo -e "\n${yellow_f}${bold}Warning${reset}:"
-        echo  "iMovie and any associated data is about to be deleted. This can not be undone."
+        echo  "${bold}iMovie${reset} and any associated data is about to be deleted. This can not be undone."
         read -q "REPLY?Do you want to proceed? (y/n) " -k
         echo # move to a new line
     fi
@@ -181,7 +180,7 @@ else
     # ----------
     if [ "$force" != true ]; then
         echo -e "\n${yellow_f}${bold}Warning${reset}:"
-        echo  "Garageband and any associated data is about to be deleted. This can not be undone."
+        echo  "${bold}Garageband${reset} and any associated data is about to be deleted. This can not be undone."
         read -q "REPLY?Do you want to proceed? (y/n) " -k
         echo # move to a new line
     fi
@@ -208,6 +207,72 @@ else
     else
         echo "Skipping removal of GarageBand";
     fi
+
+    # Launchpad (springboard)
+    # ---------
+    echo -e "\nRe-organizing bloatware within launchpad"
+    # defaults to 7col x 5row on 13" M2 Air
+    # defaults write com.apple.dock springboard-columns -int ColNum
+    # defaults write com.apple.dock springboard-rows -int RowNum
+    #
+    # must reset the launchpad before making modifications
+    defaults write com.apple.dock ResetLaunchPad -bool true
+    killall Dock
+    sleep 5;
+
+    # How macOS stores launchpad config
+    # https://fgimian.github.io/blog/2016/12/23/how-macos-stores-launchpad-configuration/
+    #
+    # path to launchpad db dir
+    # $(getconf DARWIN_USER_DIR)/com.apple.dock.launchpad/db
+
+    # Types
+    # -----
+    # 1 - ROOT
+    # 2 - FOLDER_ROOT
+    # 3 - PAGE
+    # 4 - APP
+
+    FOLDER_UUID=$(uuidgen)
+    PAGE_UUID=$(uuidgen)
+    sqlite3 $(getconf DARWIN_USER_DIR)/com.apple.dock.launchpad/db/db <<EOF
+        /* disable triggers */
+        UPDATE dbinfo SET value = 1 WHERE key = 'ignore_items_update_triggers';
+        /* get the rowid of the first page item */
+        INSERT INTO dbinfo (key, value) VALUES ('cmm_first_page_id', (SELECT rowid FROM items WHERE parent_id=1 AND ordering=1));
+
+        /* make the bloatware folder and save its rowid */
+        INSERT INTO items (uuid,flags,type,parent_id) VALUES ('${FOLDER_UUID}',1,2,(SELECT value FROM dbinfo WHERE key='cmm_first_page_id'));
+        INSERT INTO dbinfo (key, value) VALUES ('cmm_bloat_folder_id', last_insert_rowid());
+        INSERT INTO groups (item_id, title) VALUES ((SELECT value FROM dbinfo WHERE key='cmm_bloat_folder_id'), "Bloatware 🏴‍☠️");
+        /* make the first page inside the bloatware folder and save its rowid */
+        INSERT INTO items (uuid,flags,type,parent_id) VALUES ('${PAGE_UUID}',0,3,(SELECT value FROM dbinfo WHERE key='cmm_bloat_folder_id'));
+        INSERT INTO dbinfo (key, value) VALUES ('cmm_bloat_page_id', last_insert_rowid());
+        INSERT INTO groups (item_id) VALUES ((SELECT value FROM dbinfo WHERE key='cmm_bloat_page_id'));
+
+        /* move apps onto the bloatware folder's first page */
+        UPDATE items 
+        SET parent_id=(SELECT value FROM dbinfo WHERE key='cmm_bloat_page_id') 
+        WHERE rowid in (SELECT item_id FROM apps WHERE title in ('FaceTime', 'Maps', 'Messages', 'Music', 'News', 'Podcasts', 'Stocks', 'TV'));
+        /* set the app order within the new folder - alphabetical */
+        UPDATE items SET ordering=1 WHERE rowid=(SELECT item_id FROM apps WHERE title='FaceTime');
+        UPDATE items SET ordering=2 WHERE rowid=(SELECT item_id FROM apps WHERE title='Maps');
+        UPDATE items SET ordering=3 WHERE rowid=(SELECT item_id FROM apps WHERE title='Messages');
+        UPDATE items SET ordering=4 WHERE rowid=(SELECT item_id FROM apps WHERE title='Music');
+        UPDATE items SET ordering=5 WHERE rowid=(SELECT item_id FROM apps WHERE title='News');
+        UPDATE items SET ordering=6 WHERE rowid=(SELECT item_id FROM apps WHERE title='Podcasts');
+        UPDATE items SET ordering=7 WHERE rowid=(SELECT item_id FROM apps WHERE title='Stocks');
+        UPDATE items SET ordering=8 WHERE rowid=(SELECT item_id FROM apps WHERE title='TV');
+
+        /* cleanup temp variables */
+        DELETE FROM dbinfo WHERE key in ('cmm_first_page_id','cmm_bloat_folder_id','cmm_bloat_page_id');
+        /* re-enable triggers */
+        UPDATE dbinfo SET value = 0 WHERE key = 'ignore_items_update_triggers';
+EOF
+
+    # restart dock for changes to sync
+    killall Dock
+    echo -e "${green_f}${bold}Bloatware${reset}${green_f} has been consolidated and/or removed.${reset}"
     
 fi
 
