@@ -154,10 +154,10 @@ There are also several pre-installed applications that cannot be trashed because
 
 Bring Launchpad up by four finger pinching on the trackpad.  
 (Place your thumb in the bottom left and three fingers in the top right)
-Drag the following apps on top eachother to auto create a folder much like in iOS. Then rename that folder to `Apple Clutter`.
-- Facetime `15.4 MB`
+Drag the following apps on top eachother to auto create a folder much like in iOS. Then rename that folder to `Bloatware`.
+- Facetime `15.4 MB` (Signal replaces this)
 - Maps `80.2 MB`
-- Messages `5.6 MB`
+- Messages `5.6 MB` (Signal replaces this)
 - Music `102.8 MB`
 - News `10.8 MB`
 - Podcasts `45.2 MB`
@@ -165,12 +165,15 @@ Drag the following apps on top eachother to auto create a folder much like in iO
 - TV `77.5 MB`
 
 ## Third Party
+![Dependency](https://img.shields.io/static/v1?label=Dependency&message=Homebrew&color=inactive)
 
 ### Geekbench
+![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Next&color=c00)
   - make sure you didn’t get a lemon
   - Does your score match other uploads for your same machine?
 
 ### Bitwarden
+![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Next&color=c00)
 > Add to Dock
   - Enable the Safari Extension
       - Safari > Preferences > Extensions > check Bitwarden
@@ -184,7 +187,7 @@ Drag the following apps on top eachother to auto create a folder much like in iO
         - Store OTP codes in a separate app on a separate device. Otherwise, if your bitwarden account is compromised you will be SOL.
 
 ### Signal
-![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Next&color=c00)
+![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
 
 > Add to Dock
   - Secure, End-to-End encrypted messaging

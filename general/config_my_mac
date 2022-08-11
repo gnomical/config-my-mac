@@ -12,12 +12,12 @@ source $DIR/../lib/console_codes.zsh
 source $DIR/../lib/getopts.zsh
 
 # check for homebrew and updates if software installs will occur
-# if ! should_skip "geekbench" && \
-#    ! should_skip "bitwarden" && \
-#    ! should_skip "signal" && \
-#    ! should_skip "protonmail"; then
-#     source $DIR/../lib/brew_check.zsh
-# fi
+if ! should_skip "geekbench" && \
+   ! should_skip "bitwarden" && \
+   ! should_skip "signal" && \
+   ! should_skip "protonmail"; then
+    source $DIR/../lib/brew_check.zsh
+fi
 
 # in the case of modifying system preferences
 if ! should_skip "theme" || \
@@ -276,6 +276,23 @@ EOF
     
 fi
 
+#########
+# Signal
+#########
+if should_skip "signal"; then
+    echo -e "\nSkipping ${bold}Signal.app${reset} installation";
+else
+    echo -e "\nInstalling Signal.app"
+
+    # Install Signal
+    brew install --cask signal
+    # add it to the dock
+    defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Signal.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+    killall Dock
+    
+    echo "${green_f}${bold}Signal.app${reset}${green_f} has been installed.${reset}"
+    
+fi
 
 if $restart_required; then
     echo -e "\n${bold}Note${reset}: Some changes require a ${pink_f}logout and/or restart${reset} to take effect"
