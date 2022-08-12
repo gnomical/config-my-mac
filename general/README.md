@@ -164,17 +164,22 @@ Drag the following apps on top eachother to auto create a folder much like in iO
 - Stocks `4.1 MB`
 - TV `77.5 MB`
 
+> **Note**  
+> Apple likes to place all of these apps back to the root level during OS updates. Feel free to run this script again to clean it up. The script has been written in such a way that it can recover from weird states.
+
 ## Third Party
 ![Dependency](https://img.shields.io/static/v1?label=Dependency&message=Homebrew&color=inactive)
 
 ### Geekbench
 ![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Next&color=c00)
+
   - make sure you didn’t get a lemon
   - Does your score match other uploads for your same machine?
 
 ### Bitwarden
-![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Next&color=c00)
-> Add to Dock
+![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-0cf)
+
   - Enable the Safari Extension
       - Safari > Preferences > Extensions > check Bitwarden
   - Use a unique password for every service
@@ -188,13 +193,14 @@ Drag the following apps on top eachother to auto create a folder much like in iO
 
 ### Signal
 ![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-0cf)
 
-> Add to Dock
   - Secure, End-to-End encrypted messaging
   - Replace iMessage with this and tell your friends to as well
 
 ### Proton Mail
-> Add to Dock
+![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-0cf)
+
   - Secure, End-to-End encrypted mail
   - Must use Proton Mail Bridge along with your email client of choice (apple mail, outlook, thunderbird)
 
