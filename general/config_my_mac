@@ -288,6 +288,15 @@ else
     brew_app_install "bitwarden"
 fi
 
+############
+# Geekbench
+############
+if should_skip "geekbench"; then
+    echo -e "\nSkipping ${bold}Geekbench 5.app${reset} installation";
+else
+    brew_app_install "geekbench" "/Applications/Geekbench 5.app"
+fi
+
 #########
 # Signal
 #########
