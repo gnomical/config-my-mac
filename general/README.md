@@ -66,7 +66,7 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 # Operating System
 
 ## Theme  
-![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#theme)
 
 Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[^eye_strain]  Sleep can be affected by blue light late in the day.[^blue_light]  I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
 
@@ -81,7 +81,7 @@ and set the following:
 - Appearance: Dark
 
 ## Dock  
-![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#dock)
 
 The dock is one of those things that seems to be abused by Apple out of the box. It comes overloaded with bloatware, occupies a good percentage of the screen height, and can quickly become more of a drawback than an asset. These tweaks will keep the Dock out of your way until you need it.
 
@@ -121,7 +121,7 @@ and set the following:
 ## Pre-Installed
 
 ### Screenshots
-![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#screenshots)
 
 MacOS has a built in tool for capturing screen content called *Screenshot*. I frequently take clips of my screen to include in things like documentation, emails, and direct messages to quickly show a colleague or friend some content. You can take a screenshot by pressing the key combination **⇧⌘4** and then clicking to drag around the area you want to snip. By default Keep screenshots from cluttering your desktop by creating a folder for them
   - Press **⇧⌘5** then under options > Save To > Other Location
@@ -132,7 +132,7 @@ MacOS has a built in tool for capturing screen content called *Screenshot*. I fr
 > You may use the key combination **⌘^⇧4** to take a screenshot directly to your clipboard. This bypasses saving to disk and can reduce clutter
 
 ### Bloatware
-![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](bloatware)
 
 Removing most of these items from the dock earlier was just the beginning. Let's see what we can do about its presence everywhere else.  
 In total, these applications take up a good chunk of disk space (4.24 GB).  For the items we can remove you will see itemized sizes below.  
@@ -168,17 +168,17 @@ Drag the following apps on top eachother to auto create a folder much like in iO
 > Apple likes to place all of these apps back to the root level during OS updates. Feel free to run this script again to clean it up. The script has been written in such a way that it can recover from weird states.
 
 ## Third Party
-![Dependency](https://img.shields.io/static/v1?label=Dependency&message=Homebrew&color=inactive)
+[![Dependency](https://img.shields.io/static/v1?label=Dependency&message=Homebrew&color=736)](#third-party)
 
 ### Geekbench
-![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Next&color=c00)
+[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Next&color=c00)](#geekbench)
 
   - make sure you didn’t get a lemon
   - Does your score match other uploads for your same machine?
 
 ### Bitwarden
-![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
-![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-0cf)
+[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#bitwarden)
+[![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-09c)](#bitwarden)
 
   - Enable the Safari Extension
       - Safari > Preferences > Extensions > check Bitwarden
@@ -192,14 +192,14 @@ Drag the following apps on top eachother to auto create a folder much like in iO
         - Store OTP codes in a separate app on a separate device. Otherwise, if your bitwarden account is compromised you will be SOL.
 
 ### Signal
-![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
-![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-0cf)
+[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#signal)
+[![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-09c)](#signal)
 
   - Secure, End-to-End encrypted messaging
   - Replace iMessage with this and tell your friends to as well
 
 ### Proton Mail
-![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-0cf)
+[![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-09c)](#proton-mail)
 
   - Secure, End-to-End encrypted mail
   - Must use Proton Mail Bridge along with your email client of choice (apple mail, outlook, thunderbird)
