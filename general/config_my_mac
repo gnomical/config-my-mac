@@ -14,11 +14,12 @@ source $DIR/../lib/getopts.zsh
 # if software installs will occur
 # check for homebrew and updates 
 # and source the app install function
-if ! should_skip "geekbench" && \
-   ! should_skip "bitwarden" && \
-   ! should_skip "signal" && \
+if ! should_skip "geekbench" || \
+   ! should_skip "bitwarden" || \
+   ! should_skip "signal" || \
    ! should_skip "protonmail"; then
     source $DIR/../lib/brew_check.zsh
+    source $DIR/../lib/brew_app_install.zsh
 fi
 
 # in the case of modifying system preferences
@@ -284,35 +285,7 @@ fi
 if should_skip "bitwarden"; then
     echo -e "\nSkipping ${bold}Bitwarden.app${reset} installation";
 else
-    echo -e "\nInstalling Bitwarden.app"
-
-    bitwardenPath=/Applications/Bitwarden.app
-    didInstall=false
-    # Install Bitwarden
-    if [ -d "$bitwardenPath" ]; then
-        echo "${yellow_f}Warning:${reset} It seems there is already an App at '${bitwardenPath}'."
-    else
-        brew install --cask bitwarden
-        didInstall=true
-    fi
-    # add it to the dock
-    if defaults read com.apple.dock persistent-apps | grep -q $bitwardenPath; then
-        echo "${yellow_f}Warning:${reset} The file '${bitwardenPath}' is already in the Dock."
-        if ! $didInstall; then
-            echo "${yellow_f}${bold}Bitwarden.app${reset}${yellow_f} has previously been installed.${reset}"
-        fi
-    else
-        defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>${bitwardenPath}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-        killall Dock
-
-        if ! $didInstall; then
-            echo "${green_f}${bold}Bitwarden.app${reset}${green_f} has been added to the dock.${reset}"
-        fi
-    fi
-    
-    if $didInstall; then
-        echo "${green_f}${bold}Bitwarden.app${reset}${green_f} has been installed.${reset}"
-    fi
+    brew_app_install "bitwarden"
 fi
 
 #########
@@ -321,35 +294,7 @@ fi
 if should_skip "signal"; then
     echo -e "\nSkipping ${bold}Signal.app${reset} installation";
 else
-    echo -e "\nInstalling Signal.app"
-
-    signalPath=/Applications/Signal.app
-    didInstall=false
-    # Install Signal
-    if [ -d "$signalPath" ]; then
-        echo "${yellow_f}Warning:${reset} It seems there is already an App at '${signalPath}'."
-    else
-        brew install --cask signal
-        didInstall=true
-    fi
-    # add it to the dock
-    if defaults read com.apple.dock persistent-apps | grep -q $signalPath; then
-        echo "${yellow_f}Warning:${reset} The file '${signalPath}' is already in the Dock."
-        if ! $didInstall; then
-            echo "${yellow_f}${bold}Signal.app${reset}${yellow_f} has previously been installed.${reset}"
-        fi
-    else
-        defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>${signalPath}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-        killall Dock
-
-        if ! $didInstall; then
-            echo "${green_f}${bold}Signal.app${reset}${green_f} has been added to the dock.${reset}"
-        fi
-    fi
-    
-    if $didInstall; then
-        echo "${green_f}${bold}Signal.app${reset}${green_f} has been installed.${reset}"
-    fi
+    brew_app_install "signal"
 fi
 
 if $restart_required; then

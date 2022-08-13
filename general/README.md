@@ -105,7 +105,7 @@ and set the following:
 > my favorite, **⌘ Space**, to launch spotlight search.
 
 ## Trackpad  
-![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)
+[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#trackpad)
 
 Pointer options can be very personal, but these are the settings I prefer for productivity.
 
