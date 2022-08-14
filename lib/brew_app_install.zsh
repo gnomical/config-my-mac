@@ -1,10 +1,11 @@
 brew_app_install() {
     appName=$1
-    if [ -z "$2" ]; then
+    addToDock=${2:-true}
+    if [ -z "$3" ]; then
         fileName="${(C)appName}.app"
         appPath=/Applications/$fileName
     else
-        appPath=$2
+        appPath=$3
         fileName="$(basename $appPath)"
     fi
 
@@ -18,7 +19,8 @@ brew_app_install() {
     else
         brewOutput=$(brew install --cask $appName 2>&1)
         error=$(echo $brewOutput | grep "Error:")
-        if [ -n $error ]; then
+
+        if [ -n "$error" ]; then
             echo ${error/"Error:"/"${red_f}Error:${reset}"}
             hasError=true
         else
@@ -27,7 +29,7 @@ brew_app_install() {
     fi
 
     # add it to the dock
-    if ! $hasError; then
+    if ! $hasError && $addToDock; then
         if defaults read com.apple.dock persistent-apps | grep -q $appPath; then
             echo "${yellow_f}Warning:${reset} The file '${appPath}' is already in the Dock."
             if ! $didInstall; then

@@ -285,7 +285,7 @@ fi
 if should_skip "bitwarden"; then
     echo -e "\nSkipping ${bold}Bitwarden.app${reset} installation";
 else
-    brew_app_install "bitwarden"
+    brew_app_install bitwarden
 fi
 
 ############
@@ -294,13 +294,13 @@ fi
 if should_skip "geekbench"; then
     echo -e "\nSkipping ${bold}Geekbench 5.app${reset} installation";
 else
-    brew_app_install "geekbench" "/Applications/Geekbench 5.app"
+    brew_app_install geekbench false "/Applications/Geekbench 5.app"
 fi
 
 #########
 # Signal
 #########
-if should_skip "signal"; then
+if should_skip signal; then
     echo -e "\nSkipping ${bold}Signal.app${reset} installation";
 else
     brew_app_install "signal"
