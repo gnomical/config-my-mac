@@ -245,11 +245,11 @@ else
         INSERT INTO dbinfo (key, value) VALUES ('cmm_first_page_id', (SELECT rowid FROM items WHERE parent_id=1 AND ordering=1));
 
         /* make the bloatware folder and save its rowid */
-        INSERT INTO items (uuid,flags,type,parent_id) VALUES ('${FOLDER_UUID}',1,2,(SELECT value FROM dbinfo WHERE key='cmm_first_page_id'));
+        INSERT INTO items (uuid,flags,type,parent_id) VALUES ('${FOLDER_UUID}',0,2,(SELECT value FROM dbinfo WHERE key='cmm_first_page_id'));
         INSERT INTO dbinfo (key, value) VALUES ('cmm_bloat_folder_id', last_insert_rowid());
         INSERT INTO groups (item_id, title) VALUES ((SELECT value FROM dbinfo WHERE key='cmm_bloat_folder_id'), "Bloatware 🏴‍☠️");
         /* make the first page inside the bloatware folder and save its rowid */
-        INSERT INTO items (uuid,flags,type,parent_id) VALUES ('${PAGE_UUID}',0,3,(SELECT value FROM dbinfo WHERE key='cmm_bloat_folder_id'));
+        INSERT INTO items (uuid,flags,type,parent_id) VALUES ('${PAGE_UUID}',2,3,(SELECT value FROM dbinfo WHERE key='cmm_bloat_folder_id'));
         INSERT INTO dbinfo (key, value) VALUES ('cmm_bloat_page_id', last_insert_rowid());
         INSERT INTO groups (item_id) VALUES ((SELECT value FROM dbinfo WHERE key='cmm_bloat_page_id'));
 

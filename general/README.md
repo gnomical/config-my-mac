@@ -132,7 +132,10 @@ MacOS has a built in tool for capturing screen content called *Screenshot*. I fr
 > You may use the key combination **⌘^⇧4** to take a screenshot directly to your clipboard. This bypasses saving to disk and can reduce clutter
 
 ### Bloatware
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#bloatware)
+[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Partial&color=c80)](#bloatware)
+
+> **Warning**  
+> Still trying to work out how to get macOS to maintain folder settings in launchpad for extended periods of time.
 
 Removing most of these items from the dock earlier was just the beginning. Let's see what we can do about its presence everywhere else.  
 In total, these applications take up a good chunk of disk space (4.24 GB).  For the items we can remove you will see itemized sizes below.  
