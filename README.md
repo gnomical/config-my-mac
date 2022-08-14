@@ -26,7 +26,7 @@ What you will find below a list of use cases each including a verbose descriptio
 ## Use Cases
 
 ### General (All Use Cases) [⎘](general)
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Partial&color=c80)](#general-all-use-cases-)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#general-all-use-cases-)
 
 These are my preferences regardless of what the device will be used for. At the OS level they lay the foundation for ease of use in the topics of eye strain, screen real estate, and touch accessibility. At the application level they set you up for validating machine performance, establishing communication capabilities and security best practices.
 
@@ -37,6 +37,7 @@ These are my preferences regardless of what the device will be used for. At the 
 No matter what kind of software you develop there are several rules that hold true. This section is meant to be a foundation for the more specific developer use cases to build off of. It sets you up with some basic file organization, advanced git configuration, and a widely accepted IDE.
 
 [See More →](developer)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Next-900)](#developer-)
 
 ### Web Developer [⎘](web-developer)
 
@@ -45,7 +46,7 @@ When it comes to developing for the web, one of the main benefits is ease of cro
 [See More →](web-developer)
 
 ### System Admin [⎘](system-admin)
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#system-admin-)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#system-admin-)
 
 Whether you are responsible for machines you deploy to, tinker elaborately on your own machine, or find yourself architecting all the things - you will want greater visibility than most and tools to assist you on your journey. From terminal enhancements and command line tools to OS modifications and helper apps - this section has you covered.
 

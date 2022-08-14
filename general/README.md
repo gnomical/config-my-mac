@@ -17,7 +17,7 @@ These are my preferences regardless of what the device will be used for. At the 
     - [Geekbench](#geekbench)
     - [Bitwarden](#bitwarden)
     - [Signal](#signal)
-    - [Proton Mail](#proton-mail)
+    - [Proton Mail Bridge](#proton-mail-bridge)
 
 # Automated Config
 All of the manual configuration documented below has been distilled into a script housed within this repo.
@@ -66,7 +66,7 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 # Operating System
 
 ## Theme  
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#theme)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#theme)
 
 Eye strain can be reduced by viewing high contrast content as opposed to low contrast.[^eye_strain]  Sleep can be affected by blue light late in the day.[^blue_light]  I find that dark themes tend to provide higher contrast and reduce the amount of light emitted (thusly blue light) - not to mention stretch your battery life a bit.  
 
@@ -81,7 +81,7 @@ and set the following:
 - Appearance: Dark
 
 ## Dock  
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#dock)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#dock)
 
 The dock is one of those things that seems to be abused by Apple out of the box. It comes overloaded with bloatware, occupies a good percentage of the screen height, and can quickly become more of a drawback than an asset. These tweaks will keep the Dock out of your way until you need it.
 
@@ -105,7 +105,7 @@ and set the following:
 > my favorite, **⌘ Space**, to launch spotlight search.
 
 ## Trackpad  
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#trackpad)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#trackpad)
 
 Pointer options can be very personal, but these are the settings I prefer for productivity.
 
@@ -121,7 +121,7 @@ and set the following:
 ## Pre-Installed
 
 ### Screenshots
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#screenshots)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#screenshots)
 
 MacOS has a built in tool for capturing screen content called *Screenshot*. I frequently take clips of my screen to include in things like documentation, emails, and direct messages to quickly show a colleague or friend some content. You can take a screenshot by pressing the key combination **⇧⌘4** and then clicking to drag around the area you want to snip. By default Keep screenshots from cluttering your desktop by creating a folder for them
   - Press **⇧⌘5** then under options > Save To > Other Location
@@ -132,7 +132,7 @@ MacOS has a built in tool for capturing screen content called *Screenshot*. I fr
 > You may use the key combination **⌘^⇧4** to take a screenshot directly to your clipboard. This bypasses saving to disk and can reduce clutter
 
 ### Bloatware
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Partial&color=c80)](#bloatware)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Beta-c80)](#bloatware)
 
 > **Warning**  
 > Still trying to work out how to get macOS to maintain folder settings in launchpad for extended periods of time.
@@ -171,17 +171,17 @@ Drag the following apps on top eachother to auto create a folder much like in iO
 > Apple likes to place all of these apps back to the root level during OS updates. Feel free to run this script again to clean it up. The script has been written in such a way that it can recover from weird states.
 
 ## Third Party
-[![Dependency](https://img.shields.io/static/v1?label=Dependency&message=Homebrew&color=736)](#third-party)
+[![Dependency](https://img.shields.io/badge/Dependency-Homebrew-433)](#third-party)
 
 ### Geekbench
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#geekbench)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#geekbench)
 
   - make sure you didn’t get a lemon
   - Does your score match other uploads for your same machine?
 
 ### Bitwarden
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#bitwarden)
-[![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-09c)](#bitwarden)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Install%20Only-c80)](#bitwarden)
+[![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-07b)](#bitwarden)
 
   - Enable the Safari Extension
       - Safari > Preferences > Extensions > check Bitwarden
@@ -195,17 +195,18 @@ Drag the following apps on top eachother to auto create a folder much like in iO
         - Store OTP codes in a separate app on a separate device. Otherwise, if your bitwarden account is compromised you will be SOL.
 
 ### Signal
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Yes&color=090)](#signal)
-[![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-09c)](#signal)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#signal)
+[![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-07b)](#signal)
 
   - Secure, End-to-End encrypted messaging
   - Replace iMessage with this and tell your friends to as well
 
-### Proton Mail
-[![Automation Progress](https://img.shields.io/static/v1?label=Scripted&message=Next&color=c00)](#proton-mail)
-[![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-09c)](#proton-mail)
+### Proton Mail Bridge
+[![Automation Progress](https://img.shields.io/badge/Scripted-No-900)](#proton-mail)
+[![Add to Dock](https://img.shields.io/badge/-Add%20to%20Dock-07b)](#proton-mail)
+[![Moderately Expensive](https://img.shields.io/badge/-Cost%20$$-063)](https://proton.me/pricing?product=mail)
 
-  - Secure, End-to-End encrypted mail
+  - Secure, End-to-End encrypted email to your desktop client
   - Must use Proton Mail Bridge along with your email client of choice (apple mail, outlook, thunderbird)
 
 # References <!-- omit in toc -->
