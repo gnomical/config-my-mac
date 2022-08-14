@@ -171,7 +171,7 @@ Drag the following apps on top eachother to auto create a folder much like in iO
 > Apple likes to place all of these apps back to the root level during OS updates. Feel free to run this script again to clean it up. The script has been written in such a way that it can recover from weird states.
 
 ## Third Party
-[![Dependency](https://img.shields.io/badge/Dependency-Homebrew-433)](#third-party)
+[![Dependency](https://img.shields.io/badge/-Requires%20Homebrew-700)](#third-party)
 
 ### Geekbench
 [![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#geekbench)

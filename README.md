@@ -33,7 +33,7 @@ These are my preferences regardless of what the device will be used for. At the 
 [See More →](general)
 
 ### Developer [⎘](developer)
-[![Automation Progress](https://img.shields.io/badge/Scripted-Next-900)](#developer-)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Next-cec)](#developer-)
 
 No matter what kind of software you develop there are several rules that hold true. This section is meant to be a foundation for the more specific developer use cases to build off of. It sets you up with some basic file organization, advanced git configuration, and a widely accepted IDE.
 
