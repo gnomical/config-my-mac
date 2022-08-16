@@ -49,5 +49,6 @@ brew_app_install() {
         echo "${green_f}${bold}${fileName}${reset}${green_f} has been installed.${reset}"
     elif $hasError; then
         echo "${red_f}${bold}${fileName}${reset}${red_f} was ${bold}not${reset}${red_f} installed.${reset}"
+        return 1 # failed
     fi
 }

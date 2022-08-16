@@ -1,0 +1,78 @@
+#!/bin/zsh
+#
+# Installs      Chrome, Firefox, Edge
+# Configures    Browsers Dir in Dock and Launchpad
+emulate -LR zsh # reset zsh options
+
+# path of currently executing script
+DIR=${0:a:h}
+# import common libraries
+source $DIR/../lib/console_codes.zsh
+source $DIR/../lib/getopts.zsh
+
+# if software installs will occur
+# check for homebrew and updates 
+# and source the app install function
+if ! should_skip "chrome" || \
+   ! should_skip "edge" || \
+   ! should_skip "firefox" || \
+   ! should_skip "safari"; then
+    source $DIR/../lib/brew_check.zsh
+    source $DIR/../lib/brew_app_install.zsh
+fi
+
+addedToDock=false;
+addBrowserToDock() {
+    bDir=/Applications/Browsers
+    bPath=$1
+    if [ ! -d $bDir ]; then
+        mkdir $bDir
+    fi
+    # create a sym link for the browser in the dir
+    ln -sf $bPath $bDir
+
+    # make sure the browser dir is present in dock
+    if ! $addedToDock; then
+        if defaults read com.apple.dock persistent-others | grep -q $bDir; then
+            echo "The directory '${bDir}' is present on the Dock."
+        else
+            defaults write com.apple.dock persistent-others -array-add "<dict><key>tile-type</key><string>directory-tile</string><key>tile-data</key><dict><key>arrangement</key><integer>1</integer><key>file-data</key><dict><key>_CFURLString</key><string>${bDir}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+
+            addedToDock=true
+        fi
+    fi
+}
+
+# addBrowserToLaunchpad() {
+    
+# }
+
+#########
+# Safari
+#########
+if should_skip "safari"; then
+    echo -e "\nNot adding ${bold}Safari.app${reset} to Dock";
+    # addBrowserToLaunchpad Safari
+else
+    echo -e "\nAdding ${bold}Safari.app${reset} to Dock";
+    addBrowserToDock /Applications/Safari.app
+fi
+
+#########
+# Chrome
+#########
+if should_skip "chrome"; then
+    echo -e "\nSkipping ${bold}Google Chrome.app${reset} installation";
+else
+    appPath="/Applications/Google Chrome.app"
+    if brew_app_install google-chrome false $appPath; then
+        addBrowserToDock $appPath
+    fi
+fi
+
+if $addedToDock; then
+    echo -e "\n${yellow_f}Restarting the Dock...${reset}"
+    killall Dock
+    sleep 5
+    echo "${bold}Done${reset}"
+fi
