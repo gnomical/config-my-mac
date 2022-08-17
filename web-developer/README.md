@@ -73,3 +73,5 @@ To make access to the browser you need at any given moment quick, I recommend co
   - Place browser folder above downloads folder in Dock
 
 I also recommend placing all installed browsers in a folder withing Launchpad. This, along with other collections recommended in this guide, helps to keep Launchpad from feeling overwhelmingly packed with apps.
+
+# References <!-- omit in toc -->
