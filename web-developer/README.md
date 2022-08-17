@@ -57,7 +57,7 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 
 As a web developer, one of the most important things you can do is validate the user experience when viewed in the browsers your target audience will use. My usual target is Corporate America and as such there is a heavy emphasis on Desktop/Tablet. This results in market share being dominated by Chrome (60%) with a distant but competetive second from Safari (17%) and Edge (12%) along with a group of holdout "power users" who still insists on Firefox (6%). [^us-corp-stats] I use [StatCounter](https://gs.statcounter.com) as a reference to make sure i'm up to date on my assumptions when I start a new project.
 
-[^us-corp-stats]: Desktop & Tablet Browser Market Share in North America - July 2022
+[^us-corp-stats]: Desktop & Tablet Browser Market Share in North America - July 2022  
   StatCounter  
   https://gs.statcounter.com/browser-market-share/desktop-tablet/north-america/#monthly-202201-202207  
 
