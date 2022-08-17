@@ -220,37 +220,11 @@ else
     # defaults to 7col x 5row on 13" M2 Air
     # defaults write com.apple.dock springboard-columns -int ColNum
     # defaults write com.apple.dock springboard-rows -int RowNum
-    #
-    # must reset the launchpad before making modifications
-    defaults write com.apple.dock ResetLaunchPad -bool true
-    killall Dock
-    sleep 5;
 
-    newFolderPageKey=$(new_launchpad_folder "Bloatware 🏴‍☠️")
-
-    sqlite3 $(getconf DARWIN_USER_DIR)/com.apple.dock.launchpad/db/db <<EOF
-        /* disable triggers */
-        $(getToggleTriggersSQL 1)
-
-        /* move apps onto the bloatware folder's first page */
-        UPDATE items 
-        SET parent_id=(SELECT value FROM dbinfo WHERE key='$newFolderPageKey') 
-        WHERE rowid in (SELECT item_id FROM apps WHERE title in ('FaceTime', 'Maps', 'Messages', 'Music', 'News', 'Podcasts', 'Stocks', 'TV'));
-        /* set the app order within the new folder - alphabetical */
-        UPDATE items SET ordering=1 WHERE rowid=(SELECT item_id FROM apps WHERE title='FaceTime');
-        UPDATE items SET ordering=2 WHERE rowid=(SELECT item_id FROM apps WHERE title='Maps');
-        UPDATE items SET ordering=3 WHERE rowid=(SELECT item_id FROM apps WHERE title='Messages');
-        UPDATE items SET ordering=4 WHERE rowid=(SELECT item_id FROM apps WHERE title='Music');
-        UPDATE items SET ordering=5 WHERE rowid=(SELECT item_id FROM apps WHERE title='News');
-        UPDATE items SET ordering=6 WHERE rowid=(SELECT item_id FROM apps WHERE title='Podcasts');
-        UPDATE items SET ordering=7 WHERE rowid=(SELECT item_id FROM apps WHERE title='Stocks');
-        UPDATE items SET ordering=8 WHERE rowid=(SELECT item_id FROM apps WHERE title='TV');
-
-        /* cleanup temp folder variable */
-        DELETE FROM dbinfo WHERE key in ('$newFolderPageKey');
-        /* re-enable triggers */
-        $(getToggleTriggersSQL 1)
-EOF
+    bloatFolderPageID=$(get_page_from_folder_name "Bloatware 🏴‍☠️")
+    
+    bloatApps=('FaceTime' 'Maps' 'Messages' 'Music' 'News' 'Podcasts' 'Stocks' 'TV')
+    move_apps_to_folder $bloatFolderPageID ${bloatApps[@]}
 
     # restart dock for changes to sync
     killall Dock

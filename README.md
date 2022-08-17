@@ -40,7 +40,7 @@ No matter what kind of software you develop there are several rules that hold tr
 [See More →](developer)
 
 ### Web Developer [⎘](web-developer)
-[![Automation Progress](https://img.shields.io/badge/Scripted-Partial-c80)](#web-developer-)
+[![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#web-developer-)
 
 When it comes to developing for the web, one of the main benefits is ease of cross platform delivery. That makes specific configs for this profession rare. What you will need however is a great suite of browsers to test with and tools for both rapid prototyping and polished finish.
 
