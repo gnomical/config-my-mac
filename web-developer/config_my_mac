@@ -82,7 +82,7 @@ if ! should_skip "chrome" || \
     ! should_skip "edge" && appsArray+=("Microsoft Edge")
     ! should_skip "safari" && appsArray+=("Safari")
     
-    move_apps_to_folder appsArray $browsersFolderPageID
+    move_apps_to_folder $browsersFolderPageID ${appsArray[@]}
     # abuse $addedToDock to trigger dock restart below
     addedToDock=true
 fi

@@ -68,20 +68,15 @@ function join_by {
 }
 
 move_apps_to_folder() {
-    local -n appsArray=$1
-    pageID=$2
-
-    echo $appsArray
-    exit 1
+    local pageID=$1
+    shift
+    local appsArray=("$@")
 
     reorderSQL=''
     for ((i = 1; i <= $#appsArray; i++)); do
-        order=$i+1
-        reorderSQL+="UPDATE items SET ordering=$order WHERE rowid=(SELECT item_id FROM apps WHERE title='${appsArray[$i]}');"
+        reorderSQL+="UPDATE items SET ordering=$i WHERE rowid=(SELECT item_id FROM apps WHERE title='${appsArray[$i]}');"
     done
 
-    echo "WHERE rowid in (SELECT item_id FROM apps WHERE title in ('$(join_by "','" ${appsArray[@]})'));"
-    exit 1
     sqlite3 $(getconf DARWIN_USER_DIR)/com.apple.dock.launchpad/db/db <<EOF
         /* disable db triggers */
         $(get_toggle_triggers_sql 1)
