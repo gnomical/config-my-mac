@@ -17,8 +17,13 @@ if ! should_skip "chrome" || \
    ! should_skip "edge" || \
    ! should_skip "firefox" || \
    ! should_skip "safari"; then
+
     source $DIR/../lib/brew_check.zsh
     source $DIR/../lib/brew_app_install.zsh
+    source $DIR/../lib/launchpad_helpers.zsh
+
+    # find or make Browsers folder and return rowid
+    browsersFolderPageID=$(get_page_from_folder_name "Browsers")
 fi
 
 addedToDock=false;
@@ -37,22 +42,16 @@ addBrowserToDock() {
             echo "The directory '${bDir}' is present on the Dock."
         else
             defaults write com.apple.dock persistent-others -array-add "<dict><key>tile-type</key><string>directory-tile</string><key>tile-data</key><dict><key>arrangement</key><integer>1</integer><key>file-data</key><dict><key>_CFURLString</key><string>${bDir}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-
-            addedToDock=true
         fi
+        addedToDock=true
     fi
 }
-
-# addBrowserToLaunchpad() {
-    
-# }
 
 #########
 # Safari
 #########
 if should_skip "safari"; then
     echo -e "\nNot adding ${bold}Safari.app${reset} to Dock";
-    # addBrowserToLaunchpad Safari
 else
     echo -e "\nAdding ${bold}Safari.app${reset} to Dock";
     addBrowserToDock /Applications/Safari.app
@@ -69,6 +68,25 @@ else
         addBrowserToDock $appPath
     fi
 fi
+
+# if software installs did occur
+# make sure they are organized in Launchpad
+if ! should_skip "chrome" || \
+   ! should_skip "edge" || \
+   ! should_skip "firefox" || \
+   ! should_skip "safari"; then
+
+    appsArray=()
+    ! should_skip "firefox" && appsArray+=("Firefox")
+    ! should_skip "chrome" && appsArray+=("Google Chrome")
+    ! should_skip "edge" && appsArray+=("Microsoft Edge")
+    ! should_skip "safari" && appsArray+=("Safari")
+    
+    move_apps_to_folder appsArray $browsersFolderPageID
+    # abuse $addedToDock to trigger dock restart below
+    addedToDock=true
+fi
+
 
 if $addedToDock; then
     echo -e "\n${yellow_f}Restarting the Dock...${reset}"

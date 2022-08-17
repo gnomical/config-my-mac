@@ -142,6 +142,7 @@ fi
 if should_skip "bloat"; then
     echo -e "\nIgnoring Bloatware"
 else
+
     echo -e "\nRemoving and consolidating bloatware"
 
     # iMovie
@@ -213,6 +214,8 @@ else
 
     # Launchpad (springboard)
     # ---------
+    source $DIR/../lib/launchpad_helpers.zsh
+
     echo -e "\nRe-organizing bloatware within launchpad"
     # defaults to 7col x 5row on 13" M2 Air
     # defaults write com.apple.dock springboard-columns -int ColNum
@@ -223,39 +226,15 @@ else
     killall Dock
     sleep 5;
 
-    # How macOS stores launchpad config
-    # https://fgimian.github.io/blog/2016/12/23/how-macos-stores-launchpad-configuration/
-    #
-    # path to launchpad db dir
-    # $(getconf DARWIN_USER_DIR)/com.apple.dock.launchpad/db
+    newFolderPageKey=$(new_launchpad_folder "Bloatware 🏴‍☠️")
 
-    # Types
-    # -----
-    # 1 - ROOT
-    # 2 - FOLDER_ROOT
-    # 3 - PAGE
-    # 4 - APP
-
-    FOLDER_UUID=$(uuidgen)
-    PAGE_UUID=$(uuidgen)
     sqlite3 $(getconf DARWIN_USER_DIR)/com.apple.dock.launchpad/db/db <<EOF
         /* disable triggers */
-        UPDATE dbinfo SET value = 1 WHERE key = 'ignore_items_update_triggers';
-        /* get the rowid of the first page item */
-        INSERT INTO dbinfo (key, value) VALUES ('cmm_first_page_id', (SELECT rowid FROM items WHERE parent_id=1 AND ordering=1));
-
-        /* make the bloatware folder and save its rowid */
-        INSERT INTO items (uuid,flags,type,parent_id) VALUES ('${FOLDER_UUID}',0,2,(SELECT value FROM dbinfo WHERE key='cmm_first_page_id'));
-        INSERT INTO dbinfo (key, value) VALUES ('cmm_bloat_folder_id', last_insert_rowid());
-        INSERT INTO groups (item_id, title) VALUES ((SELECT value FROM dbinfo WHERE key='cmm_bloat_folder_id'), "Bloatware 🏴‍☠️");
-        /* make the first page inside the bloatware folder and save its rowid */
-        INSERT INTO items (uuid,flags,type,parent_id) VALUES ('${PAGE_UUID}',2,3,(SELECT value FROM dbinfo WHERE key='cmm_bloat_folder_id'));
-        INSERT INTO dbinfo (key, value) VALUES ('cmm_bloat_page_id', last_insert_rowid());
-        INSERT INTO groups (item_id) VALUES ((SELECT value FROM dbinfo WHERE key='cmm_bloat_page_id'));
+        $(getToggleTriggersSQL 1)
 
         /* move apps onto the bloatware folder's first page */
         UPDATE items 
-        SET parent_id=(SELECT value FROM dbinfo WHERE key='cmm_bloat_page_id') 
+        SET parent_id=(SELECT value FROM dbinfo WHERE key='$newFolderPageKey') 
         WHERE rowid in (SELECT item_id FROM apps WHERE title in ('FaceTime', 'Maps', 'Messages', 'Music', 'News', 'Podcasts', 'Stocks', 'TV'));
         /* set the app order within the new folder - alphabetical */
         UPDATE items SET ordering=1 WHERE rowid=(SELECT item_id FROM apps WHERE title='FaceTime');
@@ -267,10 +246,10 @@ else
         UPDATE items SET ordering=7 WHERE rowid=(SELECT item_id FROM apps WHERE title='Stocks');
         UPDATE items SET ordering=8 WHERE rowid=(SELECT item_id FROM apps WHERE title='TV');
 
-        /* cleanup temp variables */
-        DELETE FROM dbinfo WHERE key in ('cmm_first_page_id','cmm_bloat_folder_id','cmm_bloat_page_id');
+        /* cleanup temp folder variable */
+        DELETE FROM dbinfo WHERE key in ('$newFolderPageKey');
         /* re-enable triggers */
-        UPDATE dbinfo SET value = 0 WHERE key = 'ignore_items_update_triggers';
+        $(getToggleTriggersSQL 1)
 EOF
 
     # restart dock for changes to sync
