@@ -5,8 +5,11 @@ When it comes to developing for the web, one of the main benefits is ease of cro
 
 ### Table of Contents <!-- omit in toc -->
 - [Automated Config](#automated-config)
-- [Software](#software)
+- [Manual Documentation](#manual-documentation)
   - [Browsers](#browsers)
+  - [NPM](#npm)
+    - [nvm](#nvm)
+    - [npm](#npm-1)
 
 # Automated Config
 All of the manual configurations documented below have been distilled into a script housed within this repo.
@@ -51,7 +54,7 @@ Next, run the script. It will install and/or upgrade brew and then run through a
 
 <br/> 
 
-# Software
+# Manual Documentation
 ## Browsers
 [![Automation Progress](https://img.shields.io/badge/Scripted-Yes-280)](#browsers)
 
@@ -73,5 +76,54 @@ To make access to the browser you need at any given moment quick, I recommend co
   - Place browser folder above downloads folder in Dock
 
 I also recommend placing all installed browsers in a folder withing Launchpad. This, along with other collections recommended in this guide, helps to keep Launchpad from feeling overwhelmingly packed with apps.
+
+## NPM
+[![Automation Progress](https://img.shields.io/badge/Scripted-No-900)](#npm)
+
+A package manager for the JavaScript programming language. If you build a website, its going to run javascript. If you aren't using npm, you're doing it wrong.
+
+### nvm
+I strongly recommend using [Node Version Manager](https://github.com/nvm-sh/nvm) (nvm) to install Node.js and npm.  For more information visit their GitHub readme's [installation section](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+> **Warning**  
+> You must install `git` and `Command Line Developer Tools` before installing `nvm`. You can follow my guide in the, less specialized, [developer section](../developer#git) of this repo.
+
+The nvm installer will look for and modify your `.zshrc` shell profile. By default that file doesn't exist. Run the following command to create it for the installer.
+
+```bash
+% touch ~/.zshrc
+```
+
+To install nvm, run the following cURL command in your terminal.
+
+```bash
+% curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+When the script completes, close and reopen your terminal to start using nvm. You can test that installation was successful by running the following command.
+
+```bash
+% command -v nvm
+# nvm
+```
+> **Note**  
+> If you do not get `nvm` as the ouput then the installation was unsuccessful. Visit their [macOS troubleshooting guide](https://github.com/nvm-sh/nvm#troubleshooting-on-macos) for further assistance.
+
+### npm
+Now that nvm has been installed, we can use it to manage our node installation which will supply the system with an npm binary.  
+To download, compile, and install the latest release of node, do this:
+```bash
+% nvm install node
+```
+You can confirm the installation was successful by running the following command.
+```bash
+% npm -v
+# 8.15.0
+```
+
+> **Info**  
+> You can learn more about advanced usage for `nvm` [here](https://github.com/nvm-sh/nvm#usage).  
+> Or, get help with the `npm` cli command by running `npm help` in your terminal.
+
 
 # References <!-- omit in toc -->
